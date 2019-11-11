@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "@babel/preset-react"
+    ],
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "shippedProposals": true,
+        "targets": {
+          "browsers": ">1%, not dead, not ie 11, not op_mini all"
+        }
+      }
+    ]
+  ]
+}
