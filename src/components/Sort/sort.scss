@@ -1,0 +1,24 @@
+.sort_container {
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+
+  .sort_controllers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    max-width: 95%;
+
+    .sort_title {
+      text-transform: uppercase;
+    }
+    
+    .sort_btn {
+      width: 35%;
+    }
+  }
+}
