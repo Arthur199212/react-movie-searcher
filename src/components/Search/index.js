@@ -1,11 +1,11 @@
 import React from 'react'
-import { TextField, Button, Typography } from '@material-ui/core'
+import { Container, TextField, Button, Typography } from '@material-ui/core'
 
 import './header.scss'
 
 const Search = () => {
   return (
-    <section className='serch_container'>
+    <Container className='serch_container'>
       <form noValidate autoComplete='off' className='form_container'>
         <TextField label='Query...' margin='normal' className='input_box' />
 
@@ -22,7 +22,7 @@ const Search = () => {
           Genre
         </Button>
       </div>
-    </section>
+    </Container>
   )
 }
 

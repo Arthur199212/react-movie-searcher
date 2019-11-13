@@ -1,13 +1,13 @@
 import React from 'react'
-import { Typography, Button } from '@material-ui/core'
+import { Container, Typography, Button } from '@material-ui/core'
 
 import './sort.scss'
 
 const Sort = () => {
   return (
-    <div className='sort_container'>
+    <Container className='sort_container'>
       <Typography variant='body1' component='h2'>
-        7 movies found
+        8 movies found
       </Typography>
       <div className='sort_controllers'>
         <Typography className='sort_title' variant='subtitle1'>
@@ -20,7 +20,7 @@ const Sort = () => {
           Rating
         </Button>
       </div>
-    </div>
+    </Container>
   )
 }
 
