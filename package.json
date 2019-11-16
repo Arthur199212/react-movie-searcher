@@ -1,14 +1,14 @@
 {
-  "name": "react-app",
+  "name": "react-movie-searcher",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "http://arthur199212.github.io/react-app",
+  "homepage": "http://arthur199212.github.io/react-movie-searcher",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --port 4000 --compress --progress",
     "build": "webpack --mode production --progress",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Arthur Rubchenko",
   "license": "MIT",
