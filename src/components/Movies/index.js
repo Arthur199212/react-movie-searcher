@@ -1,19 +1,29 @@
 import React from 'react'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, Button, CircularProgress } from '@material-ui/core'
 
 import Movie from '../Movie'
 import './movies.scss'
 
-const Movies = () => {
+const Movies = ({ movies, handleLoadMore }) => {
   return (
     <Container className='movies_container' maxWidth='lg'>
+      {movies.length !== 0 ?
+      (<>
       <Grid container spacing={4}>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map(id => (
-          <Grid item key={id} xs={12} sm={6} md={4} lg={3}>
-            <Movie key={id} />
+        {movies.map(movie => (
+          <Grid item key={movie.id} xs={12} sm={6} md={4} lg={3}>
+            <Movie movie={movie} />
           </Grid>
         ))}
       </Grid>
+      <Button color='primary' className='load-more_btn' onClick={handleLoadMore} >
+        Load more
+      </Button>
+      </>)
+      : 
+      (<div className='spiner_container'>
+        <CircularProgress />
+      </div>)}
     </Container>
   )
 }
