@@ -6,6 +6,10 @@
 App is not ready yet...
 
 
+## Available Scripts
+
+In the project directory, you can run:
+
 ### `npm i`
 For installing all new dependencies from the project
 
