@@ -10,26 +10,27 @@ const MovieDetails = () => {
   const [movieData, setMovieData] = useState({})
 
   useEffect(() => {
-    FETCH_DETAILED_DATA(movieId).then(data => {
-      setMovieData(data)
-    })
+    FETCH_DETAILED_DATA(movieId)
+      .then(data => {
+        setMovieData(data)
+      })
+      .catch(err => {
+        console.log('Failed to get data:', err.message)
+      })
   }, [])
 
   return (
     <Container className='movie-detail_container' maxWidth='lg'>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
+          <img className='image' src={movieData.poster_path || ''} alt='' />
+        </Grid>
+        <Grid item xs={12} sm={8}>
           <Typography variant='h5' gutterBottom>
             {movieData.title}
           </Typography>
-          <img className='image' src={movieData.poster_path || ''} alt='' />
           <Typography variant='subtitle1' gutterBottom>
             Relese date: {movieData.release_date}
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={8}>
-          <Typography variant='subtitle1' gutterBottom>
-            Plot
           </Typography>
           <Typography variant='body2' gutterBottom>
             {movieData.overview}
