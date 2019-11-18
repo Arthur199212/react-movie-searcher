@@ -1,13 +1,16 @@
 import 'core-js'
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import FETCH_DATA from '../api'
+import { FETCH_DATA } from '../api'
 import Header from './Header'
 import Search from './Search'
 import Sort from './Sort'
 import Movies from './Movies'
 import Footer from './Footer'
+import MovieDetails from './MovieDetails'
+import NotFound from './NotFound'
 import './app.scss'
 
 const App = () => {
@@ -54,12 +57,12 @@ const App = () => {
     })
 
     FETCH_DATA({ ...searchData, sortBy: tag })
-    .then(data => {
-      setData(data)
-    })
-    .catch(err => {
-      console.log('Failed to get data:', err.message)
-    })
+      .then(data => {
+        setData(data)
+      })
+      .catch(err => {
+        console.log('Failed to get data:', err.message)
+      })
   }
 
   const handleChangeValue = ({ target: { value } }) => setValue(value)
@@ -94,7 +97,7 @@ const App = () => {
       ...searchData,
       limit: risedLimit
     })
-    
+
     FETCH_DATA({ ...searchData, limit: risedLimit })
       .then(data => {
         setData(data)
@@ -105,29 +108,41 @@ const App = () => {
   }
 
   return (
-    <>
+    <Router>
       <CssBaseline />
       <div className='global_wrapper'>
         <div className='content_wrapper'>
           <Header />
-          <Search
-            value={value}
-            searchBy={searchData.searchBy}
-            onClick={handleChangeSearchBy}
-            onChange={handleChangeValue}
-            onSubmit={handleSubmitQuery}
-          />
-          <Sort
-            hideResults={hideResults}
-            moviesFound={data.total}
-            sortBy={searchData.sortBy}
-            onClick={handleChangeSortBy}
-          />
-          <Movies movies={data.data} handleLoadMore={handleLoadMore} />
+
+            <Switch>
+              <Route path={`/film/:movieId`}>
+                <MovieDetails />
+              </Route>
+              <Route exact path='/'>
+                <Search
+                  value={value}
+                  searchBy={searchData.searchBy}
+                  onClick={handleChangeSearchBy}
+                  onChange={handleChangeValue}
+                  onSubmit={handleSubmitQuery}
+                />
+                <Sort
+                  hideResults={hideResults}
+                  moviesFound={data.total}
+                  sortBy={searchData.sortBy}
+                  onClick={handleChangeSortBy}
+                />
+                <Movies movies={data.data} handleLoadMore={handleLoadMore} />
+              </Route>
+              <Route path=''>
+                <NotFound />
+              </Route>
+            </Switch>
+
         </div>
         <Footer />
       </div>
-    </>
+    </Router>
   )
 }
 

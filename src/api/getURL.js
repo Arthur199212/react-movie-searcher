@@ -1,5 +1,6 @@
+import API_URL from './basicURL'
+
 const GET_URL = ({ query, searchBy, sortBy, offset, limit }) => {
-  const API_URL = 'https://reactjs-cdp.herokuapp.com'
   const SEARCH = query ? `&search=${query}` : ''
   const SEARCH_BY = searchBy ? `&searchBy=${searchBy}` : ''
   const SORT_BY = sortBy ? `&sortBy=${sortBy}` : '' // 'release_date' or 'vote_average'
