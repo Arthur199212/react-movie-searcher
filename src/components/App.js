@@ -1,7 +1,7 @@
 import 'core-js'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import { addMoviesData } from '../redux/actions'
@@ -108,7 +108,6 @@ const App = () => {
   }
 
   const handleLoadMore = () => {
-    setShowSpiner(true)
     const risedLimit = searchData.limit + 8
 
     setSearchData({
@@ -119,7 +118,6 @@ const App = () => {
     FETCH_DATA({ ...searchData, limit: risedLimit })
       .then(data => {
         dispatch(addMoviesData(data))
-        setShowSpiner(false)
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
