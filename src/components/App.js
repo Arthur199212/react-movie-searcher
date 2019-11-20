@@ -1,7 +1,10 @@
 import 'core-js'
 import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
+
+import { addMoviesData } from '../redux/actions'
 
 import { FETCH_DATA } from '../api'
 import Header from './Header'
@@ -14,7 +17,8 @@ import NotFound from './NotFound'
 import './app.scss'
 
 const App = () => {
-  const [data, setData] = useState({ data: [] })
+  const data = useSelector(({ moviesData }) => moviesData)
+
   const [value, setValue] = useState('')
   const [hideResults, setHideResults] = useState(true)
   const [showSpiner, setShowSpiner] = useState(true)
@@ -26,10 +30,12 @@ const App = () => {
     limit: 8
   })
 
+  const dispatch = useDispatch()
+
   useEffect(() => {
     FETCH_DATA(searchData)
       .then(data => {
-        setData(data)
+        dispatch(addMoviesData(data))
         setShowSpiner(false)
       })
       .catch(err => {
@@ -46,7 +52,7 @@ const App = () => {
 
     FETCH_DATA({ ...searchData, searchBy: tag })
       .then(data => {
-        setData(data)
+        dispatch(addMoviesData(data))
         setShowSpiner(false)
       })
       .catch(err => {
@@ -63,7 +69,7 @@ const App = () => {
 
     FETCH_DATA({ ...searchData, sortBy: tag })
       .then(data => {
-        setData(data)
+        dispatch(addMoviesData(data))
         setShowSpiner(false)
       })
       .catch(err => {
@@ -87,7 +93,7 @@ const App = () => {
       })
       FETCH_DATA({ ...searchData, query: value, limit: 8 })
         .then(data => {
-          setData(data)
+          dispatch(addMoviesData(data))
           setShowSpiner(false)
         })
         .catch(err => {
@@ -112,7 +118,7 @@ const App = () => {
 
     FETCH_DATA({ ...searchData, limit: risedLimit })
       .then(data => {
-        setData(data)
+        dispatch(addMoviesData(data))
         setShowSpiner(false)
       })
       .catch(err => {

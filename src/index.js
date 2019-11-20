@@ -1,5 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 import App from './components/App'
 
-render(<App />, document.getElementById('root'))
+import configureStore from './redux/store'
+
+render(
+  <Provider store={configureStore()}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
