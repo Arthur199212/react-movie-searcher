@@ -4,8 +4,6 @@ import { Container, Typography, Button } from '@material-ui/core'
 import './sort.scss'
 
 const Sort = ({ hideResults, moviesFound, sortBy, onClick }) => {
-
-
   return (
     <Container className='sort_container'>
       <Typography variant='body1' component='h2'>

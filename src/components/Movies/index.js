@@ -1,14 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Grid, Button, CircularProgress } from '@material-ui/core'
+import { Container, Grid, Button, CircularProgress, Typography } from '@material-ui/core'
 
 import Movie from '../Movie'
 import './movies.scss'
 
-const Movies = ({ movies, handleLoadMore }) => {
+const Movies = ({ movies, handleLoadMore, showSpiner }) => {
   return (
     <Container className='movies_container' maxWidth='lg'>
-      {movies.length !== 0 ? (
+      {!movies.length && !showSpiner ? 
+        (
+          <Typography variant="h6">
+            No movies found
+          </Typography>
+        ) :
+      !showSpiner ? (
         <>
           <Grid container spacing={4}>
             {movies.map(movie => (

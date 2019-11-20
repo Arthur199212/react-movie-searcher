@@ -1,6 +1,6 @@
 import 'core-js'
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import { FETCH_DATA } from '../api'
@@ -17,6 +17,7 @@ const App = () => {
   const [data, setData] = useState({ data: [] })
   const [value, setValue] = useState('')
   const [hideResults, setHideResults] = useState(true)
+  const [showSpiner, setShowSpiner] = useState(true)
   const [searchData, setSearchData] = useState({
     query: '',
     searchBy: 'title',
@@ -29,6 +30,7 @@ const App = () => {
     FETCH_DATA(searchData)
       .then(data => {
         setData(data)
+        setShowSpiner(false)
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -36,6 +38,7 @@ const App = () => {
   }, [])
 
   const handleChangeSearchBy = tag => {
+    setShowSpiner(true)
     setSearchData({
       ...searchData,
       searchBy: tag
@@ -44,6 +47,7 @@ const App = () => {
     FETCH_DATA({ ...searchData, searchBy: tag })
       .then(data => {
         setData(data)
+        setShowSpiner(false)
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -51,6 +55,7 @@ const App = () => {
   }
 
   const handleChangeSortBy = tag => {
+    setShowSpiner(true)
     setSearchData({
       ...searchData,
       sortBy: tag
@@ -59,6 +64,7 @@ const App = () => {
     FETCH_DATA({ ...searchData, sortBy: tag })
       .then(data => {
         setData(data)
+        setShowSpiner(false)
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -70,6 +76,8 @@ const App = () => {
   const handleSubmitQuery = e => {
     e.preventDefault()
 
+    setShowSpiner(true)
+
     // TODO Validation
     if (value) {
       setSearchData({
@@ -80,6 +88,7 @@ const App = () => {
       FETCH_DATA({ ...searchData, query: value, limit: 8 })
         .then(data => {
           setData(data)
+          setShowSpiner(false)
         })
         .catch(err => {
           console.log('Failed to get data:', err.message)
@@ -87,10 +96,13 @@ const App = () => {
 
       setValue('')
       setHideResults(false)
+    } else {
+      setShowSpiner(false)
     }
   }
 
   const handleLoadMore = () => {
+    setShowSpiner(true)
     const risedLimit = searchData.limit + 8
 
     setSearchData({
@@ -101,6 +113,7 @@ const App = () => {
     FETCH_DATA({ ...searchData, limit: risedLimit })
       .then(data => {
         setData(data)
+        setShowSpiner(false)
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -114,31 +127,34 @@ const App = () => {
         <div className='content_wrapper'>
           <Header />
 
-            <Switch>
-              <Route path={`/film/:movieId`}>
-                <MovieDetails />
-              </Route>
-              <Route exact path='/'>
-                <Search
-                  value={value}
-                  searchBy={searchData.searchBy}
-                  onClick={handleChangeSearchBy}
-                  onChange={handleChangeValue}
-                  onSubmit={handleSubmitQuery}
-                />
-                <Sort
-                  hideResults={hideResults}
-                  moviesFound={data.total}
-                  sortBy={searchData.sortBy}
-                  onClick={handleChangeSortBy}
-                />
-                <Movies movies={data.data} handleLoadMore={handleLoadMore} />
-              </Route>
-              <Route path=''>
-                <NotFound />
-              </Route>
-            </Switch>
-
+          <Switch>
+            <Route path={`/film/:movieId`}>
+              <MovieDetails />
+            </Route>
+            <Route exact path='/'>
+              <Search
+                value={value}
+                searchBy={searchData.searchBy}
+                onClick={handleChangeSearchBy}
+                onChange={handleChangeValue}
+                onSubmit={handleSubmitQuery}
+              />
+              <Sort
+                hideResults={hideResults}
+                moviesFound={data.total}
+                sortBy={searchData.sortBy}
+                onClick={handleChangeSortBy}
+              />
+              <Movies
+                movies={data.data}
+                handleLoadMore={handleLoadMore}
+                showSpiner={showSpiner}
+              />
+            </Route>
+            <Route path=''>
+              <NotFound />
+            </Route>
+          </Switch>
         </div>
         <Footer />
       </div>
