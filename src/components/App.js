@@ -1,10 +1,21 @@
 import 'core-js'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import { addMoviesData, setSearchBy, setSortBy, setQuery, riseLimit } from '../redux/actions'
+import {
+  addMoviesData,
+  setSearchBy,
+  setSortBy,
+  setQuery,
+  riseLimit,
+  setValue,
+  deleteValue,
+  showResults,
+  spinerTurnOn,
+  spinerTurnOff
+} from '../redux/actions'
 import { preloadedState } from '../redux/reducers/searchData'
 
 import { FETCH_DATA } from '../api'
@@ -20,10 +31,9 @@ import './app.scss'
 const App = () => {
   const data = useSelector(({ moviesData }) => moviesData)
   const searchData = useSelector(({ searchData }) => searchData)
-
-  const [value, setValue] = useState('')
-  const [hideResults, setHideResults] = useState(true)
-  const [showSpiner, setShowSpiner] = useState(true)
+  const value = useSelector(({ inputValue }) => inputValue)
+  const hideResults = useSelector(({ hideResults }) => hideResults)
+  const showSpiner = useSelector(({ showSpiner }) => showSpiner)
 
   const dispatch = useDispatch()
 
@@ -31,7 +41,7 @@ const App = () => {
     FETCH_DATA(searchData)
       .then(data => {
         dispatch(addMoviesData(data))
-        setShowSpiner(false)
+        dispatch(spinerTurnOff())
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -39,13 +49,13 @@ const App = () => {
   }, [])
 
   const handleChangeSearchBy = tag => {
-    setShowSpiner(true)
+    dispatch(spinerTurnOn())
     dispatch(setSearchBy(tag))
-    
+
     FETCH_DATA({ ...searchData, searchBy: tag })
       .then(data => {
         dispatch(addMoviesData(data))
-        setShowSpiner(false)
+        dispatch(spinerTurnOff())
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
@@ -53,25 +63,25 @@ const App = () => {
   }
 
   const handleChangeSortBy = tag => {
-    setShowSpiner(true)
+    dispatch(spinerTurnOn())
     dispatch(setSortBy(tag))
 
     FETCH_DATA({ ...searchData, sortBy: tag })
       .then(data => {
         dispatch(addMoviesData(data))
-        setShowSpiner(false)
+        dispatch(spinerTurnOff())
       })
       .catch(err => {
         console.log('Failed to get data:', err.message)
       })
   }
 
-  const handleChangeValue = ({ target: { value } }) => setValue(value)
+  const handleChangeValue = ({ target: { value } }) => dispatch(setValue(value))
 
   const handleSubmitQuery = e => {
     e.preventDefault()
 
-    setShowSpiner(true)
+    dispatch(spinerTurnOn())
 
     // TODO Validation
     if (value) {
@@ -80,16 +90,16 @@ const App = () => {
       FETCH_DATA({ ...searchData, query: value, limit: 8 })
         .then(data => {
           dispatch(addMoviesData(data))
-          setShowSpiner(false)
+          dispatch(spinerTurnOff())
         })
         .catch(err => {
           console.log('Failed to get data:', err.message)
         })
 
-      setValue('')
-      setHideResults(false)
+      dispatch(deleteValue())
+      dispatch(showResults())
     } else {
-      setShowSpiner(false)
+      dispatch(spinerTurnOff())
     }
   }
 

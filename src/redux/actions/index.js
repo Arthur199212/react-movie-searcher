@@ -3,7 +3,12 @@ import {
   SET_SEARCH_BY,
   SET_SORT_BY,
   SET_QUERY,
-  RISE_LIMIT
+  RISE_LIMIT,
+  SET_VALUE,
+  DELETE_VALUE,
+  SHOW_RESULTS,
+  SPINER_TURN_ON,
+  SPINER_TURN_OFF
 } from '../constants'
 
 export const addMoviesData = data => ({
@@ -28,4 +33,25 @@ export const setQuery = data => ({
 
 export const riseLimit = () => ({
   type: RISE_LIMIT
+})
+
+export const setValue = value => ({
+  type: SET_VALUE,
+  value
+})
+
+export const deleteValue = () => ({
+  type: DELETE_VALUE
+})
+
+export const showResults = () => ({
+  type: SHOW_RESULTS
+})
+
+export const spinerTurnOn = () => ({
+  type: SPINER_TURN_ON
+})
+
+export const spinerTurnOff = () => ({
+  type: SPINER_TURN_OFF
 })
