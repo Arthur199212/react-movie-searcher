@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import { addMoviesData } from '../redux/actions'
+import { addMoviesData, setSearchBy, setSortBy, setQuery, riseLimit } from '../redux/actions'
+import { preloadedState } from '../redux/reducers/searchData'
 
 import { FETCH_DATA } from '../api'
 import Header from './Header'
@@ -18,17 +19,11 @@ import './app.scss'
 
 const App = () => {
   const data = useSelector(({ moviesData }) => moviesData)
+  const searchData = useSelector(({ searchData }) => searchData)
 
   const [value, setValue] = useState('')
   const [hideResults, setHideResults] = useState(true)
   const [showSpiner, setShowSpiner] = useState(true)
-  const [searchData, setSearchData] = useState({
-    query: '',
-    searchBy: 'title',
-    sortBy: 'release_date',
-    offset: 0,
-    limit: 8
-  })
 
   const dispatch = useDispatch()
 
@@ -45,11 +40,8 @@ const App = () => {
 
   const handleChangeSearchBy = tag => {
     setShowSpiner(true)
-    setSearchData({
-      ...searchData,
-      searchBy: tag
-    })
-
+    dispatch(setSearchBy(tag))
+    
     FETCH_DATA({ ...searchData, searchBy: tag })
       .then(data => {
         dispatch(addMoviesData(data))
@@ -62,10 +54,7 @@ const App = () => {
 
   const handleChangeSortBy = tag => {
     setShowSpiner(true)
-    setSearchData({
-      ...searchData,
-      sortBy: tag
-    })
+    dispatch(setSortBy(tag))
 
     FETCH_DATA({ ...searchData, sortBy: tag })
       .then(data => {
@@ -86,11 +75,8 @@ const App = () => {
 
     // TODO Validation
     if (value) {
-      setSearchData({
-        ...searchData,
-        query: value,
-        limit: 8
-      })
+      dispatch(setQuery(value))
+
       FETCH_DATA({ ...searchData, query: value, limit: 8 })
         .then(data => {
           dispatch(addMoviesData(data))
@@ -108,12 +94,8 @@ const App = () => {
   }
 
   const handleLoadMore = () => {
-    const risedLimit = searchData.limit + 8
-
-    setSearchData({
-      ...searchData,
-      limit: risedLimit
-    })
+    dispatch(riseLimit())
+    const risedLimit = searchData.limit + preloadedState.limit
 
     FETCH_DATA({ ...searchData, limit: risedLimit })
       .then(data => {
