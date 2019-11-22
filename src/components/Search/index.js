@@ -1,9 +1,11 @@
 import React from 'react'
 import { Container, TextField, Button, Typography } from '@material-ui/core'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-import './header.scss'
+import s from './header.scss'
 
 const Search = ({ value, searchBy, onClick, onChange, onSubmit }) => {
+  useStyles(s)
   return (
     <Container className='serch_container'>
       <form noValidate autoComplete='off' className='form_container' onSubmit={onSubmit} >

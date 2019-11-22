@@ -8,11 +8,12 @@ import {
   Button,
   Typography
 } from '@material-ui/core'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-import './movie.scss'
+import s from './movie.scss'
 
 const Movie = ({ movie: { title, tagline, poster_path }}) => {
-
+  useStyles(s)
   return (
     <Card className='movie_container'>
       <CardActionArea>

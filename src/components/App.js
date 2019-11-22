@@ -1,8 +1,9 @@
 import 'core-js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
 import {
   addMoviesData,
@@ -26,7 +27,7 @@ import Movies from './Movies'
 import Footer from './Footer'
 import MovieDetails from './MovieDetails'
 import NotFound from './NotFound'
-import './app.scss'
+import s from './app.scss'
 
 const App = () => {
   const data = useSelector(({ moviesData }) => moviesData)
@@ -36,6 +37,8 @@ const App = () => {
   const showSpiner = useSelector(({ showSpiner }) => showSpiner)
 
   const dispatch = useDispatch()
+
+  useStyles(s)
 
   useEffect(() => {
     FETCH_DATA(searchData)
@@ -117,7 +120,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <>
       <CssBaseline />
       <div className='global_wrapper'>
         <div className='content_wrapper'>
@@ -154,7 +157,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </Router>
+    </>
   )
 }
 

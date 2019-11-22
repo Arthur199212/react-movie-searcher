@@ -1,9 +1,11 @@
 import React from 'react'
 import { Container, Typography, Button } from '@material-ui/core'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-import './sort.scss'
+import s from './sort.scss'
 
 const Sort = ({ hideResults, moviesFound, sortBy, onClick }) => {
+  useStyles(s)
   return (
     <Container className='sort_container'>
       <Typography variant='body1' component='h2'>

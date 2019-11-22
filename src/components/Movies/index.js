@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Grid, Button, CircularProgress, Typography } from '@material-ui/core'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
 import Movie from '../Movie'
-import './movies.scss'
+import s from './movies.scss'
 
 const Movies = ({ movies, handleLoadMore, showSpiner }) => {
+  useStyles(s)
   return (
     <Container className='movies_container' maxWidth='lg'>
       {!movies.length && !showSpiner ? 

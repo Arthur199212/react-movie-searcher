@@ -1,11 +1,13 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 const path = require("path");
 
-module.exports = {
-  entry: "./src/index.js",
+const serverConfig = {
+  target: 'node',
+  entry: "./src/server.js",
+  externals: [nodeExternals()],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
   },
   devtool: "cheap-module-source-map",
   module: {
@@ -14,7 +16,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
+          "isomorphic-style-loader",
           "css-loader",
           {
             loader: "sass-loader",
@@ -26,9 +28,33 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "index.html"
-    })
-  ]
 };
+
+const clientConfig = {
+  entry: "./src/client.js",
+  output: {
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js"
+  },
+  devtool: "cheap-module-source-map",
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "isomorphic-style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          }
+        ]
+      }
+    ]
+  },
+};
+
+module.exports = [ serverConfig, clientConfig ];
