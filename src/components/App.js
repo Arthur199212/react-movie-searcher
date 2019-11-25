@@ -79,7 +79,7 @@ const App = () => {
 
   const handleChangeValue = useCallback(({ target: { value } }) => dispatch(setValue(value)), [value])
 
-  const handleSubmitQuery = useCallback(e => {
+  const handleSubmitQuery = e => {
     e.preventDefault()
 
     dispatch(spinerTurnOn())
@@ -102,7 +102,7 @@ const App = () => {
     } else {
       dispatch(spinerTurnOff())
     }
-  }, [searchData])
+  }
 
   const handleLoadMore = useCallback(() => {
     dispatch(riseLimit())
