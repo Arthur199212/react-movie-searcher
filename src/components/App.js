@@ -26,6 +26,7 @@ import Movies from './Movies'
 import Footer from './Footer'
 const MovieDetails = lazy(() => import('./MovieDetails'))
 import NotFound from './NotFound'
+import ErrorBoundary from './ErrorBoundary'
 import './app.scss'
 
 const App = () => {
@@ -118,44 +119,46 @@ const App = () => {
 
   return (
     <Router>
-      <CssBaseline />
-      <div className='global_wrapper'>
-        <div className='content_wrapper'>
-          <Header />
+      <ErrorBoundary>
+        <CssBaseline />
+        <div className='global_wrapper'>
+          <div className='content_wrapper'>
+            <Header />
 
-          <Switch>
-            <Route path={`/film/:movieId`}>
-              <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
-                <MovieDetails />
-              </Suspense>
-            </Route>
-            <Route exact path='/'>
-              <Search
-                value={value}
-                searchBy={searchData.searchBy}
-                onClick={handleChangeSearchBy}
-                onChange={handleChangeValue}
-                onSubmit={handleSubmitQuery}
-              />
-              <Sort
-                hideResults={hideResults}
-                moviesFound={data.total}
-                sortBy={searchData.sortBy}
-                onClick={handleChangeSortBy}
-              />
-              <Movies
-                movies={data.data}
-                handleLoadMore={handleLoadMore}
-                showSpiner={showSpiner}
-              />
-            </Route>
-            <Route path=''>
-              <NotFound />
-            </Route>
-          </Switch>
+            <Switch>
+              <Route path={`/film/:movieId`}>
+                <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
+                  <MovieDetails />
+                </Suspense>
+              </Route>
+              <Route exact path='/'>
+                <Search
+                  value={value}
+                  searchBy={searchData.searchBy}
+                  onClick={handleChangeSearchBy}
+                  onChange={handleChangeValue}
+                  onSubmit={handleSubmitQuery}
+                />
+                <Sort
+                  hideResults={hideResults}
+                  moviesFound={data.total}
+                  sortBy={searchData.sortBy}
+                  onClick={handleChangeSortBy}
+                />
+                <Movies
+                  movies={data.data}
+                  handleLoadMore={handleLoadMore}
+                  showSpiner={showSpiner}
+                />
+              </Route>
+              <Route path=''>
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ErrorBoundary>
     </Router>
   )
 }
