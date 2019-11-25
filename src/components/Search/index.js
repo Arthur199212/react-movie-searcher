@@ -49,4 +49,4 @@ const Search = ({ value, searchBy, onClick, onChange, onSubmit }) => {
   )
 }
 
-export default Search
+export default React.memo(Search)

@@ -42,4 +42,4 @@ const Movies = ({ movies, handleLoadMore, showSpiner }) => {
   )
 }
 
-export default Movies
+export default React.memo(Movies)

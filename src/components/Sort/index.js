@@ -24,4 +24,4 @@ const Sort = ({ hideResults, moviesFound, sortBy, onClick }) => {
   )
 }
 
-export default Sort
+export default React.memo(Sort)

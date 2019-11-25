@@ -1,8 +1,8 @@
 import 'core-js'
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback, lazy, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { CssBaseline, CircularProgress } from '@material-ui/core'
 
 import {
   addMoviesData,
@@ -24,7 +24,7 @@ import Search from './Search'
 import Sort from './Sort'
 import Movies from './Movies'
 import Footer from './Footer'
-import MovieDetails from './MovieDetails'
+const MovieDetails = lazy(() => import('./MovieDetails'))
 import NotFound from './NotFound'
 import './app.scss'
 
@@ -76,9 +76,9 @@ const App = () => {
       })
   }
 
-  const handleChangeValue = ({ target: { value } }) => dispatch(setValue(value))
+  const handleChangeValue = useCallback(({ target: { value } }) => dispatch(setValue(value)), [value])
 
-  const handleSubmitQuery = e => {
+  const handleSubmitQuery = useCallback(e => {
     e.preventDefault()
 
     dispatch(spinerTurnOn())
@@ -101,9 +101,9 @@ const App = () => {
     } else {
       dispatch(spinerTurnOff())
     }
-  }
+  }, [searchData])
 
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     dispatch(riseLimit())
     const risedLimit = searchData.limit + preloadedState.limit
 
@@ -114,7 +114,7 @@ const App = () => {
       .catch(err => {
         console.log('Failed to get data:', err.message)
       })
-  }
+  }, [searchData])
 
   return (
     <Router>
@@ -125,7 +125,9 @@ const App = () => {
 
           <Switch>
             <Route path={`/film/:movieId`}>
-              <MovieDetails />
+              <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
+                <MovieDetails />
+              </Suspense>
             </Route>
             <Route exact path='/'>
               <Search

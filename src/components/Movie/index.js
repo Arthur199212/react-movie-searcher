@@ -42,4 +42,4 @@ const Movie = ({ movie: { title, tagline, poster_path }}) => {
   )
 }
 
-export default Movie
+export default React.memo(Movie)
