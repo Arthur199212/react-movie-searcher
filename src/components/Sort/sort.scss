@@ -1,8 +1,19 @@
 .sort_container {
-  padding: 0.5rem 0;
+  padding-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 870px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .results {
+    @media screen and (max-width: 870px) {
+      margin-top: 1rem;
+    }
+  }
 
   .sort_controllers {
     display: flex;
@@ -11,12 +22,35 @@
     width: 400px;
     max-width: 95%;
 
+    @media screen and (max-width: 870px) {
+      margin-top: 0.5rem;
+    }
+
+    @media screen and (max-width: 430px) {
+      flex-wrap: wrap;
+    }
+
     .sort_title {
       text-transform: uppercase;
+
+      @media screen and (max-width: 430px) {
+        width: 100%;
+      }
     }
-    
+
     .sort_btn {
       width: 35%;
+
+      @media screen and (max-width: 430px) {
+        width: 45%;
+      }
+    }
+
+    .release_btn {
+      @media screen and (max-width: 430px) {
+        width: 50%;
+      }
     }
   }
 }
+

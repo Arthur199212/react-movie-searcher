@@ -31,17 +31,17 @@ const Search = ({ value, searchBy, onClick, onChange, onSubmit }) => {
           Search by
         </Typography>
         <Button
+          className='filter_btn'
           variant={searchBy === 'title' ? 'contained' : 'outlined'}
           color='primary'
-          className='filter_btn'
           onClick={() => onClick('title')}
         >
           Title
         </Button>
         <Button
+          className='filter_btn genre_btn'
           variant={searchBy === 'genres' ? 'contained' : 'outlined'}
           color='primary'
-          className='filter_btn'
           onClick={() => onClick('genres')}
         >
           Genre

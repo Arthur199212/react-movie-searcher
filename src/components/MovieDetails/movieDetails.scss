@@ -2,6 +2,11 @@
   margin-top: 2rem;
   padding: 8px 0;
 
+  @media screen and (max-width: 430px) {
+    margin-top: 0;
+    padding: 1rem;
+  }
+
   .load-more_btn {
     display: block;
     margin: 2rem auto 0;
