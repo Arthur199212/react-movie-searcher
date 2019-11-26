@@ -8,9 +8,7 @@
     "start": "node dist/main.js",
     "watch": "concurrently \"webpack --mode development --watch\" \"nodemon dist/main\"",
     "dev": "webpack --mode development --progress",
-    "build": "webpack --mode production --progress",
-    "predeploy": "concurrently \"npm:build\"",
-    "deploy": "gh-pages -d public"
+    "build": "webpack --mode production --progress"
   },
   "author": "Arthur Rubchenko",
   "license": "MIT",
