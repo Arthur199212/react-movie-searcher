@@ -13,7 +13,7 @@ import configureStore from './redux/store'
 
 const app = express()
 
-const port = 3000
+const port = 4000
 
 const dev = process.env.NODE_ENV === 'development'
 
