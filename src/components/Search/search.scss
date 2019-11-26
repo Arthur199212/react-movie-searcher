@@ -1,0 +1,57 @@
+.serch_container {
+  padding-top: 0.5rem;
+}
+
+.form_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.input_box {
+  width: 75%;
+
+  @media screen and (max-width: 740px) {
+    width: 58%;
+  }
+}
+
+.form_btn {
+  width: 23%;
+  height: 100%;
+
+  @media screen and (max-width: 740px) {
+    width: 40%;
+  }
+}
+
+.filter_container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  max-width: 95%;
+
+  @media screen and (max-width: 430px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .filter_title {
+    text-transform: uppercase;
+
+    @media screen and (max-width: 430px) {
+      width: 100%;
+    }
+  }
+
+  .filter_btn {
+    width: 35%;
+
+    @media screen and (max-width: 430px) {
+      width: 45%;
+    }
+  }
+}

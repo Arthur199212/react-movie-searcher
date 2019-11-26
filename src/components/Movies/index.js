@@ -16,7 +16,7 @@ const Movies = ({ movies, handleLoadMore, showSpiner }) => {
         ) :
       !showSpiner ? (
         <>
-          <Grid container spacing={4}>
+          <Grid className='grid_container' container spacing={4}>
             {movies.map(movie => (
               <Grid item key={movie.id} xs={12} sm={6} md={4} lg={3}>
                 <Link to={`/film/${movie.id}`}>
