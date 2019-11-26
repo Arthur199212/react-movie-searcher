@@ -3,7 +3,7 @@
 1. [Link to hosted App](https://arthur199212.github.io/react-movie-searcher/)
 2. Used technologies: JS (ES6+), React (Hooks), Redux (Hooks), SSR (server-side rendering), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
 
-### Information: To check work of SSR with simple Express server please visit `ssr branch`.
+### Information: to check work of SSR with simple Express server please visit `ssr branch`.
 
 ## Available Scripts
 
