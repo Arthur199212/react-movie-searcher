@@ -1,9 +1,9 @@
 import { ADD_MOVIES } from '../constants'
 
-const moviesData = (state = { data: [] }, { type, data }) => {
+const moviesData = (state = { data: [] }, { type, payload }) => {
   switch (type) {
     case ADD_MOVIES:
-      return data
+      return payload
     default:
       return state
   }

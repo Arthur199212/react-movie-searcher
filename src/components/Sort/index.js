@@ -3,11 +3,11 @@ import { Container, Typography, Button } from '@material-ui/core'
 
 import './sort.scss'
 
-const Sort = ({ hideResults, moviesFound, sortBy, onClick }) => {
+const Sort = ({ moviesFound, sortBy, onClick }) => {
   return (
     <Container className='sort_container'>
       <Typography className='results' variant='body1' component='h2'>
-        {hideResults ? '' : `${moviesFound || 0} movies found`}
+        {`${moviesFound || 0} movies found`}
       </Typography>
       <div className='sort_controllers'>
         <Typography className='sort_title' variant='subtitle1'>

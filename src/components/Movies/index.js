@@ -13,8 +13,7 @@ const Movies = ({ movies, handleLoadMore, showSpiner }) => {
           <Typography variant="h6">
             No movies found
           </Typography>
-        ) :
-      !showSpiner ? (
+        ) : (
         <>
           <Grid className='grid_container' container spacing={4}>
             {movies.map(movie => (
@@ -25,6 +24,11 @@ const Movies = ({ movies, handleLoadMore, showSpiner }) => {
               </Grid>
             ))}
           </Grid>
+          {showSpiner && (
+            <div className='spiner_container'>
+              <CircularProgress />
+            </div>
+          )}
           <Button
             color='primary'
             className='load-more_btn'
@@ -33,11 +37,7 @@ const Movies = ({ movies, handleLoadMore, showSpiner }) => {
             Load more
           </Button>
         </>
-      ) : (
-        <div className='spiner_container'>
-          <CircularProgress />
-        </div>
-      )}
+        )}
     </Container>
   )
 }

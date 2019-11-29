@@ -1,9 +1,9 @@
 import { SET_VALUE, DELETE_VALUE } from '../constants'
 
-const inputValue = (state = '', { type, value }) => {
+const inputValue = (state = '', { type, payload }) => {
   switch (type) {
     case SET_VALUE:
-      return value
+      return payload
     case DELETE_VALUE:
       return ''
     default:
