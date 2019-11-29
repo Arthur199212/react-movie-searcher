@@ -6,52 +6,110 @@ import {
   RISE_LIMIT,
   SET_VALUE,
   DELETE_VALUE,
-  SHOW_RESULTS,
   SPINER_TURN_ON,
-  SPINER_TURN_OFF
+  SPINER_TURN_OFF,
+  ADD_MOVIE_DATA,
+  SET_DEFAULT_MOVIE_DATA
 } from '../constants'
+import { GET_URL, GET_DETAILED_URL } from '../../api'
 
-export const addMoviesData = data => ({
+const addMoviesData = payload => ({
   type: ADD_MOVIES,
-  data
+  payload
 })
 
-export const setSearchBy = data => ({
+const setSearchBy = payload => ({
   type: SET_SEARCH_BY,
-  data
+  payload
 })
 
-export const setSortBy = data => ({
+const setSortBy = payload => ({
   type: SET_SORT_BY,
-  data
+  payload
 })
 
-export const setQuery = data => ({
+const setQuery = payload => ({
   type: SET_QUERY,
-  data
+  payload
 })
 
-export const riseLimit = () => ({
+const riseLimit = () => ({
   type: RISE_LIMIT
 })
 
-export const setValue = value => ({
-  type: SET_VALUE,
-  value
-})
-
-export const deleteValue = () => ({
+const deleteValue = () => ({
   type: DELETE_VALUE
 })
 
-export const showResults = () => ({
-  type: SHOW_RESULTS
-})
-
-export const spinerTurnOn = () => ({
+const spinerTurnOn = () => ({
   type: SPINER_TURN_ON
 })
 
-export const spinerTurnOff = () => ({
+const spinerTurnOff = () => ({
   type: SPINER_TURN_OFF
 })
+
+export const setValue = payload => ({
+  type: SET_VALUE,
+  payload
+})
+
+const addMovieData = payload => ({
+  type: ADD_MOVIE_DATA,
+  payload
+})
+
+const setDefaultMovieData = () => ({
+  type: SET_DEFAULT_MOVIE_DATA,
+})
+
+export const fetchData = subreddit => (dispatch, getState) => {
+  const { searchData } = getState()
+
+  dispatch(spinerTurnOn())
+
+  fetch(GET_URL(searchData))
+    .then(res => res.json())
+    .then(data => {
+      dispatch(addMoviesData(data))
+      dispatch(spinerTurnOff())
+    })
+    .catch(err => {
+      dispatch(spinerTurnOff())
+      console.log('Failed to get data:', err.message)
+    })
+}
+
+export const fetchDetaledData = subreddit => dispatch => {
+  dispatch(setDefaultMovieData())
+
+  fetch(GET_DETAILED_URL(subreddit))
+    .then(res => res.json())
+    .then(data => {
+      dispatch(addMovieData(data))
+    })
+    .catch(err => {
+      console.log('Failed to get detaild movie data:', err.message)
+    })
+}
+
+export const changeSearchBy = subreddit => dispatch => {
+  dispatch(setSearchBy(subreddit))
+  dispatch(fetchData())
+}
+
+export const changeSortBy = subreddit => dispatch => {
+  dispatch(setSortBy(subreddit))
+  dispatch(fetchData())
+}
+
+export const makeQuery = subreddit => dispatch => {
+  dispatch(setQuery(subreddit))
+  dispatch(fetchData())
+  dispatch(deleteValue())
+}
+
+export const loadMore = subreddit => dispatch => {
+  dispatch(riseLimit())
+  dispatch(fetchData())
+}

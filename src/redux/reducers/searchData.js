@@ -8,22 +8,22 @@ export const preloadedState = {
   limit: 8
 }
 
-const searchData = (state = preloadedState, { type, data }) => {
+const searchData = (state = preloadedState, { type, payload }) => {
   switch (type) {
     case SET_SEARCH_BY:
       return {
         ...state,
-        searchBy: data
+        searchBy: payload
       }
     case SET_SORT_BY:
       return {
         ...state,
-        sortBy: data
+        sortBy: payload
       }
     case SET_QUERY:
       return {
         ...state,
-        query: data,
+        query: payload,
         limit: preloadedState.limit
       }
     case RISE_LIMIT:
