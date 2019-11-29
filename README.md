@@ -1,9 +1,9 @@
 # Movie searcher
 
 1. [Link to hosted App](https://arthur199212.github.io/react-movie-searcher/)
-2. Used technologies: JS (ES6+), React (Hooks), Redux (Hooks), SSR (server-side rendering), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
+2. Used technologies: JS (ES6+), React (Hooks, ), Redux (Hooks, Lazy, Suspense), SSR (server-side rendering with custom styles and Material-UI), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
 
-### To check work of SSR with simple Express server please visit `ssr` branch.
+### Information: to check work of SSR with simple Express server please visit `ssr branch`.
 
 ## Available Scripts
 
@@ -29,3 +29,11 @@ After this app is ready to be deployed.
 ### `npm run deploy`
 
 Publishes app to the gh-pages so it will be available by the [link](https://arthur199212.github.io/react-movie-searcher/)
+
+## Screenshots
+
+![screenshot1](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/01.PNG)
+
+![screenshot2](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/02.PNG)
+
+![screenshot3](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/03.PNG)
