@@ -1,7 +1,7 @@
 import 'core-js'
 import React, { useEffect, useCallback, lazy, Suspense } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import { CssBaseline, CircularProgress } from '@material-ui/core'
 
 import {
@@ -31,6 +31,8 @@ const App = () => {
 
   const dispatch = useDispatch()
 
+  const history = useHistory()
+
   useEffect(() => {
     dispatch(fetchData(searchData))
   }, [])
@@ -50,28 +52,31 @@ const App = () => {
   const handleSubmitQuery = e => {
     e.preventDefault()
 
-    if (value) dispatch(makeQuery(value))
+    if (value) history.push(`/search/${value.trim()}`)
   }
 
+  const handleSerachForQuery = value => {
+    if (value) {
+      dispatch(setValue(value.trim()))
+      dispatch(makeQuery(value.trim()))
+    }
+  }
+  
   const handleLoadMore = useCallback(() => {
     dispatch(loadMore())
   }, [searchData])
 
   return (
-    <Router>
       <ErrorBoundary>
         <CssBaseline />
         <div className='global_wrapper'>
           <div className='content_wrapper'>
             <Header />
-
             <Switch>
-              <Route path={`/film/:movieId`}>
-                <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
-                  <MovieDetails showSpiner={showSpiner} />
-                </Suspense>
-              </Route>
               <Route exact path='/'>
+                <Redirect to='/search' />
+              </Route>
+              <Route path={'/search'}>
                 <Search
                   value={value}
                   searchBy={searchData.searchBy}
@@ -84,11 +89,23 @@ const App = () => {
                   sortBy={searchData.sortBy}
                   onClick={handleChangeSortBy}
                 />
-                <Movies
-                  movies={data.data}
-                  handleLoadMore={handleLoadMore}
-                  showSpiner={showSpiner}
-                />
+                <Switch>
+                {[`/search/:query`, '/search'].map(route => (
+                  <Route key={route} path={route}>
+                    <Movies
+                      movies={data.data}
+                      handleLoadMore={handleLoadMore}
+                      showSpiner={showSpiner}
+                      handleSerachForQuery={handleSerachForQuery}
+                    />
+                  </Route>
+                ))}
+                </Switch>
+              </Route>
+              <Route path={`/film/:movieId`}>
+                <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
+                  <MovieDetails showSpiner={showSpiner} />
+                </Suspense>
               </Route>
               <Route path=''>
                 <NotFound />
@@ -98,7 +115,6 @@ const App = () => {
           <Footer />
         </div>
       </ErrorBoundary>
-    </Router>
   )
 }
 
