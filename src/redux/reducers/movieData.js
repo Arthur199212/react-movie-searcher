@@ -1,6 +1,6 @@
 import { ADD_MOVIE_DATA, SET_DEFAULT_MOVIE_DATA } from '../constants'
 
-const initialData = { data: [] }
+const initialData = { }
 
 const movieData = (state = initialData, { type, payload }) => {
   switch (type) {

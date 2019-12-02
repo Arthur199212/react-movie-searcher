@@ -68,7 +68,7 @@ const App = () => {
             <Switch>
               <Route path={`/film/:movieId`}>
                 <Suspense fallback={<div className='spiner_container'><CircularProgress /></div>}>
-                  <MovieDetails />
+                  <MovieDetails showSpiner={showSpiner} />
                 </Suspense>
               </Route>
               <Route exact path='/'>

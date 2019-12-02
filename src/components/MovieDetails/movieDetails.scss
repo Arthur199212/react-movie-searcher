@@ -1,6 +1,5 @@
 .movie-detail_container {
   margin-top: 2rem;
-  padding: 8px 0;
 
   @media screen and (max-width: 430px) {
     margin-top: 0;
@@ -20,5 +19,10 @@
   .image {
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .spiner_container {
+    display: flex;
+    justify-content: center;
   }
 }
