@@ -68,7 +68,7 @@ const App = () => {
 
           <Switch>
             <Route path={`/film/:movieId`}>
-              <MovieDetails />
+              <MovieDetails showSpiner={showSpiner} />
             </Route>
             <Route exact path='/'>
               <Search

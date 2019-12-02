@@ -82,13 +82,16 @@ export const fetchData = subreddit => (dispatch, getState) => {
 
 export const fetchDetaledData = subreddit => dispatch => {
   dispatch(setDefaultMovieData())
+  dispatch(spinerTurnOn())
 
   fetch(GET_DETAILED_URL(subreddit))
     .then(res => res.json())
     .then(data => {
       dispatch(addMovieData(data))
+      dispatch(spinerTurnOff())
     })
     .catch(err => {
+      dispatch(spinerTurnOff())
       console.log('Failed to get detaild movie data:', err.message)
     })
 }

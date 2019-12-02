@@ -2,7 +2,7 @@ import React from 'react'
 import { hydrate } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './components/App'
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 
 import configureStore from './redux/store'
