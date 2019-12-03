@@ -2,17 +2,14 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Typography, Container, Grid, CircularProgress } from '@material-ui/core'
-import useStyles from 'isomorphic-style-loader/useStyles'
 
 import { fetchDetaledData } from '../../redux/actions'
-import s from './movieDetails.scss'
+import './movieDetails.scss'
 
 const MovieDetails = ({ showSpiner }) => {
   const movieData = useSelector(({ movieData }) => movieData)
   const dispatch = useDispatch()
   const { movieId } = useParams()
-
-  useStyles(s)
 
   useEffect(() => {
     dispatch(fetchDetaledData(movieId))

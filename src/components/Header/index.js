@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AppBar, Toolbar, Typography, Container } from '@material-ui/core'
-import useStyles from 'isomorphic-style-loader/useStyles'
 
-import s from './header.scss'
+import './header.scss'
 
 const Header = () => {
-  useStyles(s)
   return (
     <header>
       <AppBar position='static'>

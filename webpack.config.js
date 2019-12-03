@@ -1,5 +1,6 @@
 const nodeExternals = require('webpack-node-externals');
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const serverConfig = {
   target: 'node',
@@ -16,8 +17,13 @@ const serverConfig = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "isomorphic-style-loader",
-          "css-loader",
+
+          {
+            loader: 'css-loader',
+            options: {
+              onlyLocals: true,
+            },
+          },
           {
             loader: "sass-loader",
             options: {
@@ -43,7 +49,7 @@ const clientConfig = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "isomorphic-style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "sass-loader",
@@ -55,6 +61,11 @@ const clientConfig = {
       }
     ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].css',
+    }),
+  ],
 };
 
 module.exports = [ serverConfig, clientConfig ];

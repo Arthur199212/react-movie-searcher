@@ -6,9 +6,8 @@ import {
   Link,
   Toolbar
 } from '@material-ui/core'
-import useStyles from 'isomorphic-style-loader/useStyles'
 
-import s from './footer.scss'
+import './footer.scss'
 
 function Copyright () {
   return (
@@ -23,7 +22,6 @@ function Copyright () {
 }
 
 const Footer = () => {
-  useStyles(s)
   return (
     <footer>
       <AppBar position='static' style={{ padding: 0, margin: 0 }}>

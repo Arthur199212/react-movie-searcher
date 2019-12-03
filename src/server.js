@@ -4,7 +4,6 @@ import { renderToString } from 'react-dom/server'
 import { JssProvider } from 'react-jss'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router-dom'
-import StyleContext from 'isomorphic-style-loader/StyleContext'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 import reload from 'reload'
 
@@ -21,12 +20,12 @@ app.use(express.static('public'))
 
 if (dev) {
   reload(app)
-    .then(function (reloadReturned) {
+    .then(reloadReturned => {
       server.listen(app.get('port'), function () {
         console.log(`Web server listening on port ${app.get('port')}`)
       })
     })
-    .catch(function (err) {
+    .catch(err => {
       console.error(
         'Reload could not start, could not start server/sample app',
         err
@@ -39,18 +38,12 @@ app.use((req, res) => {
 
   const sheets = new ServerStyleSheets()
 
-  const css = new Set()
-  const insertCss = (...styles) =>
-    styles.forEach(style => css.add(style._getCss()))
-
   const html = renderToString(
     sheets.collect(
       <JssProvider>
         <Provider store={configureStore()}>
           <StaticRouter location={req.url} context={context}>
-            <StyleContext.Provider value={{ insertCss }}>
               <App />
-            </StyleContext.Provider>
           </StaticRouter>
         </Provider>
       </JssProvider>
@@ -70,7 +63,7 @@ app.use((req, res) => {
       <link rel='shortcut icon' type='image/png' href='https://cdn.auth0.com/blog/react-js/react.png'/>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
       <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
-      <style id='ssr-styles'>${[...css].join('')}</style>
+      <link rel='stylesheet' href='/styles/main.css' />
       <style id="ssr-material-ui-styles">${cssString}</style>
     </head>
     <body>

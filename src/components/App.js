@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import useStyles from 'isomorphic-style-loader/useStyles'
 
 import {
   setValue,
@@ -21,7 +20,7 @@ import Movies from './Movies'
 import Footer from './Footer'
 import MovieDetails from './MovieDetails'
 import NotFound from './NotFound'
-import s from './app.scss'
+import './app.scss'
 
 const App = () => {
   const data = useSelector(({ moviesData }) => moviesData)
@@ -32,8 +31,6 @@ const App = () => {
   const dispatch = useDispatch()
 
   const history = useHistory()
-
-  useStyles(s)
 
   useEffect(() => {
     dispatch(fetchData(searchData))
