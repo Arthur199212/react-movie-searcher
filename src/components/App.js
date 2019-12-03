@@ -1,7 +1,7 @@
 import 'core-js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
@@ -31,6 +31,8 @@ const App = () => {
 
   const dispatch = useDispatch()
 
+  const history = useHistory()
+
   useStyles(s)
 
   useEffect(() => {
@@ -52,7 +54,14 @@ const App = () => {
   const handleSubmitQuery = e => {
     e.preventDefault()
 
-    if (value) dispatch(makeQuery(value))
+    if (value) history.push(`/search/${value.trim()}`)
+  }
+
+  const handleSerachForQuery = value => {
+    if (value) {
+      dispatch(setValue(value.trim()))
+      dispatch(makeQuery(value.trim()))
+    }
   }
 
   const handleLoadMore = () => {
@@ -67,10 +76,11 @@ const App = () => {
           <Header />
 
           <Switch>
-            <Route path={`/film/:movieId`}>
-              <MovieDetails showSpiner={showSpiner} />
-            </Route>
+
             <Route exact path='/'>
+              <Redirect to='/search' />
+            </Route>
+            <Route path='/search' >
               <Search
                 value={value}
                 searchBy={searchData.searchBy}
@@ -83,11 +93,21 @@ const App = () => {
                 sortBy={searchData.sortBy}
                 onClick={handleChangeSortBy}
               />
-              <Movies
-                movies={data.data}
-                handleLoadMore={handleLoadMore}
-                showSpiner={showSpiner}
-              />
+              <Switch>
+                {[`/search/:query`, '/search'].map(route => (
+                  <Route key={route} path={route}>
+                    <Movies
+                      movies={data.data}
+                      handleLoadMore={handleLoadMore}
+                      showSpiner={showSpiner}
+                      handleSerachForQuery={handleSerachForQuery}
+                    />
+                  </Route>
+                ))}
+              </Switch>
+            </Route>
+            <Route path={`/film/:movieId`}>
+              <MovieDetails showSpiner={showSpiner} />
             </Route>
             <Route path=''>
               <NotFound />

@@ -1,13 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { Container, Grid, Button, CircularProgress, Typography } from '@material-ui/core'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 import Movie from '../Movie'
 import s from './movies.scss'
 
-const Movies = ({ movies, handleLoadMore, showSpiner }) => {
+const Movies = ({ movies, handleLoadMore, showSpiner, handleSerachForQuery }) => {
+  const { query } = useParams()
+
   useStyles(s)
+
+  useEffect(() => {
+    handleSerachForQuery(query)
+  }, [query])
+  
   return (
     <Container className='movies_container' maxWidth='lg'>
       {!movies.length && !showSpiner ? 
