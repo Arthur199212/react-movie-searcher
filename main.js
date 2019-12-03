@@ -86,324 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Footer/footer.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Footer/footer.scss ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".footer_container {\n  display: flex;\n  justify-content: center;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Header/header.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Header/header.scss ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".header_toolbar {\n  display: flex;\n  justify-content: space-between;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Movie/movie.scss":
-/*!********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Movie/movie.scss ***!
-  \********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".movie_container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.movie_container .movie_media {\n  padding-top: 150%;\n}\n@media screen and (max-width: 430px) {\n  .movie_container .movie_media {\n    padding-top: 115%;\n  }\n}\n.movie_container .card_content {\n  flex-grow: 1;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/MovieDetails/movieDetails.scss":
-/*!**********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/MovieDetails/movieDetails.scss ***!
-  \**********************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".movie-detail_container {\n  margin-top: 2rem;\n}\n@media screen and (max-width: 430px) {\n  .movie-detail_container {\n    margin-top: 0;\n    padding: 1rem;\n  }\n}\n.movie-detail_container .load-more_btn {\n  display: block;\n  margin: 2rem auto 0;\n}\n.movie-detail_container .spiner_container {\n  display: flex;\n  justify-content: center;\n}\n.movie-detail_container .image {\n  width: 100%;\n  box-sizing: border-box;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Movies/movies.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Movies/movies.scss ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".movies_container {\n  margin-top: 2rem;\n  padding: 8px 0;\n}\n.movies_container .grid_container {\n  width: 100%;\n  margin: 0;\n}\n.movies_container .load-more_btn {\n  display: block;\n  margin: 2rem auto 0;\n}\n.movies_container .spiner_container {\n  display: flex;\n  justify-content: center;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Search/header.scss":
-/*!**********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Search/header.scss ***!
-  \**********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".serch_container {\n  padding-top: 0.5rem;\n}\n\n.form_container {\n  display: flex;\n  justify-content: center;\n  align-items: baseline;\n}\n\n.input_box {\n  width: 80%;\n}\n@media screen and (max-width: 740px) {\n  .input_box {\n    width: 60%;\n  }\n}\n\n.form_btn {\n  margin-left: 1rem;\n  width: 20%;\n  height: 100%;\n}\n@media screen and (max-width: 740px) {\n  .form_btn {\n    width: 40%;\n  }\n}\n\n.filter_container {\n  margin-top: 1rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 400px;\n  max-width: 95%;\n}\n@media screen and (max-width: 430px) {\n  .filter_container {\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: flex-start;\n  }\n}\n.filter_container .filter_title {\n  text-transform: uppercase;\n}\n@media screen and (max-width: 430px) {\n  .filter_container .filter_title {\n    width: 100%;\n  }\n}\n.filter_container .filter_btn {\n  width: 35%;\n}\n@media screen and (max-width: 430px) {\n  .filter_container .filter_btn {\n    width: 45%;\n  }\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Sort/sort.scss":
-/*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/Sort/sort.scss ***!
-  \******************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, ".sort_container {\n  padding-top: 0.5rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n@media screen and (max-width: 870px) {\n  .sort_container {\n    flex-direction: column-reverse;\n    align-items: flex-start;\n  }\n}\n@media screen and (max-width: 870px) {\n  .sort_container .results {\n    margin-top: 1rem;\n  }\n}\n.sort_container .sort_controllers {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 400px;\n  max-width: 95%;\n}\n@media screen and (max-width: 870px) {\n  .sort_container .sort_controllers {\n    margin-top: 0.5rem;\n  }\n}\n@media screen and (max-width: 430px) {\n  .sort_container .sort_controllers {\n    flex-wrap: wrap;\n  }\n}\n.sort_container .sort_controllers .sort_title {\n  text-transform: uppercase;\n}\n@media screen and (max-width: 430px) {\n  .sort_container .sort_controllers .sort_title {\n    width: 100%;\n  }\n}\n.sort_container .sort_controllers .sort_btn {\n  width: 35%;\n}\n@media screen and (max-width: 430px) {\n  .sort_container .sort_controllers .sort_btn {\n    width: 45%;\n  }\n}\n@media screen and (max-width: 430px) {\n  .sort_container .sort_controllers .release_btn {\n    width: 50%;\n  }\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/app.scss":
-/*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/app.scss ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "html,\n#root {\n  height: 100%;\n}\n\n.global_wrapper {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n.global_wrapper .content_wrapper {\n  padding-bottom: 2rem;\n  flex: 1 0 auto;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n}", ""]);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], "{").concat(content, "}");
-      }
-
-      return content;
-    }).join('');
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery) {
-    if (typeof modules === 'string') {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    for (var i = 0; i < this.length; i++) {
-      // eslint-disable-next-line prefer-destructuring
-      var id = this[i][0];
-
-      if (id != null) {
-        alreadyImportedModules[id] = true;
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = modules[_i]; // skip already imported module
-      // this implementation is not 100% perfect for weird media query combinations
-      // when a module is imported multiple times with different media queries.
-      // I hope this will never occur (Hey this way we have smaller bundles)
-
-      if (item[0] == null || !alreadyImportedModules[item[0]]) {
-        if (mediaQuery && !item[2]) {
-          item[2] = mediaQuery;
-        } else if (mediaQuery) {
-          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
-        }
-
-        list.push(item);
-      }
-    }
-  };
-
-  return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
-
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
-
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-  return "/*# ".concat(data, " */");
-}
-
-/***/ }),
-
-/***/ "./node_modules/isomorphic-style-loader/insertCss.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/isomorphic-style-loader/insertCss.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*! Isomorphic Style Loader | MIT License | https://github.com/kriasoft/isomorphic-style-loader */
-
-
-
-var inserted = {};
-
-function b64EncodeUnicode(str) {
-  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
-    return String.fromCharCode("0x" + p1);
-  }));
-}
-
-function removeCss(ids) {
-  ids.forEach(function (id) {
-    if (--inserted[id] <= 0) {
-      var elem = document.getElementById(id);
-
-      if (elem) {
-        elem.parentNode.removeChild(elem);
-      }
-    }
-  });
-}
-
-function insertCss(styles, _temp) {
-  var _ref = _temp === void 0 ? {} : _temp,
-      _ref$replace = _ref.replace,
-      replace = _ref$replace === void 0 ? false : _ref$replace,
-      _ref$prepend = _ref.prepend,
-      prepend = _ref$prepend === void 0 ? false : _ref$prepend,
-      _ref$prefix = _ref.prefix,
-      prefix = _ref$prefix === void 0 ? 's' : _ref$prefix;
-
-  var ids = [];
-
-  for (var i = 0; i < styles.length; i++) {
-    var _styles$i = styles[i],
-        moduleId = _styles$i[0],
-        css = _styles$i[1],
-        media = _styles$i[2],
-        sourceMap = _styles$i[3];
-    var id = "" + prefix + moduleId + "-" + i;
-    ids.push(id);
-
-    if (inserted[id]) {
-      if (!replace) {
-        inserted[id]++;
-        continue;
-      }
-    }
-
-    inserted[id] = 1;
-    var elem = document.getElementById(id);
-    var create = false;
-
-    if (!elem) {
-      create = true;
-      elem = document.createElement('style');
-      elem.setAttribute('type', 'text/css');
-      elem.id = id;
-
-      if (media) {
-        elem.setAttribute('media', media);
-      }
-    }
-
-    var cssText = css;
-
-    if (sourceMap && typeof btoa === 'function') {
-      cssText += "\n/*# sourceMappingURL=data:application/json;base64," + b64EncodeUnicode(JSON.stringify(sourceMap)) + "*/";
-      cssText += "\n/*# sourceURL=" + sourceMap.file + "?" + id + "*/";
-    }
-
-    if ('textContent' in elem) {
-      elem.textContent = cssText;
-    } else {
-      elem.styleSheet.cssText = cssText;
-    }
-
-    if (create) {
-      if (prepend) {
-        document.head.insertBefore(elem, document.head.childNodes[0]);
-      } else {
-        document.head.appendChild(elem);
-      }
-    }
-  }
-
-  return removeCss.bind(null, ids);
-}
-
-module.exports = insertCss;
-//# sourceMappingURL=insertCss.js.map
-
-
-/***/ }),
-
 /***/ "./src/api/basicURL.js":
 /*!*****************************!*\
   !*** ./src/api/basicURL.js ***!
@@ -507,19 +189,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "@material-ui/core/CssBaseline");
 /* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions */ "./src/redux/actions/index.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Header */ "./src/components/Header/index.js");
-/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Search */ "./src/components/Search/index.js");
-/* harmony import */ var _Sort__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Sort */ "./src/components/Sort/index.js");
-/* harmony import */ var _Movies__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Movies */ "./src/components/Movies/index.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Footer */ "./src/components/Footer/index.js");
-/* harmony import */ var _MovieDetails__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MovieDetails */ "./src/components/MovieDetails/index.js");
-/* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./NotFound */ "./src/components/NotFound/index.js");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app.scss */ "./src/components/app.scss");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_14__);
-
+/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/actions */ "./src/redux/actions/index.js");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Header */ "./src/components/Header/index.js");
+/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Search */ "./src/components/Search/index.js");
+/* harmony import */ var _Sort__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Sort */ "./src/components/Sort/index.js");
+/* harmony import */ var _Movies__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Movies */ "./src/components/Movies/index.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Footer */ "./src/components/Footer/index.js");
+/* harmony import */ var _MovieDetails__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./MovieDetails */ "./src/components/MovieDetails/index.js");
+/* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./NotFound */ "./src/components/NotFound/index.js");
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.scss */ "./src/components/app.scss");
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -549,17 +228,17 @@ const App = () => {
     showSpiner
   }) => showSpiner);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_5___default()(_app_scss__WEBPACK_IMPORTED_MODULE_14___default.a);
+  const history = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["useHistory"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["fetchData"])(searchData));
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["fetchData"])(searchData));
   }, []);
 
   const handleChangeSearchBy = tag => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["changeSearchBy"])(tag));
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["changeSearchBy"])(tag));
   };
 
   const handleChangeSortBy = tag => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["changeSortBy"])(tag));
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["changeSortBy"])(tag));
   };
 
   const handleChangeValue = ({
@@ -567,46 +246,61 @@ const App = () => {
       value
     }
   }) => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["setValue"])(value));
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["setValue"])(value));
   };
 
   const handleSubmitQuery = e => {
     e.preventDefault();
-    if (value) dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["makeQuery"])(value));
+    if (value) history.push("/search/".concat(value.trim()));
+  };
+
+  const handleSerachForQuery = value => {
+    if (value) {
+      dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["setValue"])(value.trim()));
+      dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["makeQuery"])(value.trim()));
+    }
   };
 
   const handleLoadMore = () => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["loadMore"])());
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["loadMore"])());
   };
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_4___default.a, null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "global_wrapper"
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "content_wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    path: "/film/:movieId"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MovieDetails__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    showSpiner: showSpiner
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
+    to: "/search"
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    path: "/search"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_7__["default"], {
     value: value,
     searchBy: searchData.searchBy,
     onClick: handleChangeSearchBy,
     onChange: handleChangeValue,
     onSubmit: handleSubmitQuery
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Sort__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Sort__WEBPACK_IMPORTED_MODULE_8__["default"], {
     moviesFound: data.total,
     sortBy: searchData.sortBy,
     onClick: handleChangeSortBy
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Movies__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, ["/search/:query", '/search'].map(route => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    key: route,
+    path: route
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Movies__WEBPACK_IMPORTED_MODULE_9__["default"], {
     movies: data.data,
     handleLoadMore: handleLoadMore,
+    showSpiner: showSpiner,
+    handleSerachForQuery: handleSerachForQuery
+  }))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    path: "/film/:movieId"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MovieDetails__WEBPACK_IMPORTED_MODULE_11__["default"], {
     showSpiner: showSpiner
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     path: ""
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NotFound__WEBPACK_IMPORTED_MODULE_13__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], null)));
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NotFound__WEBPACK_IMPORTED_MODULE_12__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -618,24 +312,9 @@ const App = () => {
   !*** ./src/components/Footer/footer.scss ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./footer.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Footer/footer.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -652,11 +331,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _footer_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer.scss */ "./src/components/Footer/footer.scss");
-/* harmony import */ var _footer_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_footer_scss__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _footer_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer.scss */ "./src/components/Footer/footer.scss");
+/* harmony import */ var _footer_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_footer_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -672,7 +348,6 @@ function Copyright() {
 }
 
 const Footer = () => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default()(_footer_scss__WEBPACK_IMPORTED_MODULE_3___default.a);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
     position: "static",
     style: {
@@ -698,24 +373,9 @@ const Footer = () => {
   !*** ./src/components/Header/header.scss ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Header/header.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -734,18 +394,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./header.scss */ "./src/components/Header/header.scss");
-/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_header_scss__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header.scss */ "./src/components/Header/header.scss");
+/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_header_scss__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 
 const Header = () => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3___default()(_header_scss__WEBPACK_IMPORTED_MODULE_4___default.a);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["AppBar"], {
     position: "static"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -779,11 +435,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _movie_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./movie.scss */ "./src/components/Movie/movie.scss");
-/* harmony import */ var _movie_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_movie_scss__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _movie_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./movie.scss */ "./src/components/Movie/movie.scss");
+/* harmony import */ var _movie_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_movie_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -795,7 +448,6 @@ const Movie = ({
     poster_path
   }
 }) => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default()(_movie_scss__WEBPACK_IMPORTED_MODULE_3___default.a);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     className: "movie_container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["CardActionArea"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["CardMedia"], {
@@ -830,24 +482,9 @@ const Movie = ({
   !*** ./src/components/Movie/movie.scss ***!
   \*****************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./movie.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Movie/movie.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -868,12 +505,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../redux/actions */ "./src/redux/actions/index.js");
-/* harmony import */ var _movieDetails_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./movieDetails.scss */ "./src/components/MovieDetails/movieDetails.scss");
-/* harmony import */ var _movieDetails_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_movieDetails_scss__WEBPACK_IMPORTED_MODULE_6__);
-
+/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/actions */ "./src/redux/actions/index.js");
+/* harmony import */ var _movieDetails_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./movieDetails.scss */ "./src/components/MovieDetails/movieDetails.scss");
+/* harmony import */ var _movieDetails_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_movieDetails_scss__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -891,9 +525,8 @@ const MovieDetails = ({
   const {
     movieId
   } = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["useParams"])();
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_4___default()(_movieDetails_scss__WEBPACK_IMPORTED_MODULE_6___default.a);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_5__["fetchDetaledData"])(movieId));
+    dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_4__["fetchDetaledData"])(movieId));
   }, []);
   const {
     poster_path = '',
@@ -946,24 +579,9 @@ const MovieDetails = ({
   !*** ./src/components/MovieDetails/movieDetails.scss ***!
   \*******************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./movieDetails.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/MovieDetails/movieDetails.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -982,12 +600,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Movie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Movie */ "./src/components/Movie/index.js");
-/* harmony import */ var _movies_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./movies.scss */ "./src/components/Movies/movies.scss");
-/* harmony import */ var _movies_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_movies_scss__WEBPACK_IMPORTED_MODULE_5__);
-
+/* harmony import */ var _Movie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Movie */ "./src/components/Movie/index.js");
+/* harmony import */ var _movies_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./movies.scss */ "./src/components/Movies/movies.scss");
+/* harmony import */ var _movies_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_movies_scss__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -997,9 +612,15 @@ __webpack_require__.r(__webpack_exports__);
 const Movies = ({
   movies,
   handleLoadMore,
-  showSpiner
+  showSpiner,
+  handleSerachForQuery
 }) => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_3___default()(_movies_scss__WEBPACK_IMPORTED_MODULE_5___default.a);
+  const {
+    query
+  } = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useParams"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    handleSerachForQuery(query);
+  }, [query]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     className: "movies_container",
     maxWidth: "lg"
@@ -1018,7 +639,7 @@ const Movies = ({
     lg: 3
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/film/".concat(movie.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Movie__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Movie__WEBPACK_IMPORTED_MODULE_3__["default"], {
     movie: movie
   }))))), showSpiner && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spiner_container"
@@ -1038,24 +659,9 @@ const Movies = ({
   !*** ./src/components/Movies/movies.scss ***!
   \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./movies.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Movies/movies.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -1088,32 +694,6 @@ const NotFound = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElemen
 
 /***/ }),
 
-/***/ "./src/components/Search/header.scss":
-/*!*******************************************!*\
-  !*** ./src/components/Search/header.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./header.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Search/header.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
-
-/***/ }),
-
 /***/ "./src/components/Search/index.js":
 /*!****************************************!*\
   !*** ./src/components/Search/index.js ***!
@@ -1127,11 +707,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header.scss */ "./src/components/Search/header.scss");
-/* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_header_scss__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _search_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search.scss */ "./src/components/Search/search.scss");
+/* harmony import */ var _search_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_search_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -1143,7 +720,6 @@ const Search = ({
   onChange,
   onSubmit
 }) => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default()(_header_scss__WEBPACK_IMPORTED_MODULE_3___default.a);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     className: "serch_container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -1184,6 +760,17 @@ const Search = ({
 
 /***/ }),
 
+/***/ "./src/components/Search/search.scss":
+/*!*******************************************!*\
+  !*** ./src/components/Search/search.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./src/components/Sort/index.js":
 /*!**************************************!*\
   !*** ./src/components/Sort/index.js ***!
@@ -1197,11 +784,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-style-loader/useStyles */ "isomorphic-style-loader/useStyles");
-/* harmony import */ var isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _sort_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sort.scss */ "./src/components/Sort/sort.scss");
-/* harmony import */ var _sort_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sort_scss__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _sort_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sort.scss */ "./src/components/Sort/sort.scss");
+/* harmony import */ var _sort_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sort_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -1211,7 +795,6 @@ const Sort = ({
   sortBy,
   onClick: _onClick
 }) => {
-  isomorphic_style_loader_useStyles__WEBPACK_IMPORTED_MODULE_2___default()(_sort_scss__WEBPACK_IMPORTED_MODULE_3___default.a);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     className: "sort_container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
@@ -1245,24 +828,9 @@ const Sort = ({
   !*** ./src/components/Sort/sort.scss ***!
   \***************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./sort.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/Sort/sort.scss");
-    var insertCss = __webpack_require__(/*! ../../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -1271,24 +839,9 @@ const Sort = ({
   !*** ./src/components/app.scss ***!
   \*********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 
-    var refs = 0;
-    var css = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./app.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/app.scss");
-    var insertCss = __webpack_require__(/*! ../../node_modules/isomorphic-style-loader/insertCss.js */ "./node_modules/isomorphic-style-loader/insertCss.js");
-    var content = typeof css === 'string' ? [[module.i, css, '']] : css;
-
-    exports = module.exports = css.locals || {};
-    exports._getContent = function() { return content; };
-    exports._getCss = function() { return '' + css; };
-    exports._insertCss = function(options) { return insertCss(content, options) };
-
-    // Hot Module Replacement
-    // https://webpack.github.io/docs/hot-module-replacement
-    // Only activated in browser context
-    if (false) { var removeCss; }
-  
 
 /***/ }),
 
@@ -1713,15 +1266,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! isomorphic-style-loader/StyleContext */ "isomorphic-style-loader/StyleContext");
-/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var reload__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reload */ "reload");
-/* harmony import */ var reload__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(reload__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/App */ "./src/components/App.js");
-/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./redux/store */ "./src/redux/store.js");
-
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var reload__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reload */ "reload");
+/* harmony import */ var reload__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(reload__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/App */ "./src/components/App.js");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./redux/store */ "./src/redux/store.js");
 
 
 
@@ -1738,34 +1288,26 @@ const dev = "development" === 'development';
 app.use(express__WEBPACK_IMPORTED_MODULE_0___default.a.static('public'));
 
 if (dev) {
-  reload__WEBPACK_IMPORTED_MODULE_8___default()(app).then(function (reloadReturned) {
+  reload__WEBPACK_IMPORTED_MODULE_7___default()(app).then(reloadReturned => {
     server.listen(app.get('port'), function () {
       console.log("Web server listening on port ".concat(app.get('port')));
     });
-  }).catch(function (err) {
+  }).catch(err => {
     console.error('Reload could not start, could not start server/sample app', err);
   });
 }
 
 app.use((req, res) => {
   const context = {};
-  const sheets = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__["ServerStyleSheets"]();
-  const css = new Set();
-
-  const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()));
-
+  const sheets = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__["ServerStyleSheets"]();
   const html = Object(react_dom_server__WEBPACK_IMPORTED_MODULE_2__["renderToString"])(sheets.collect(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_jss__WEBPACK_IMPORTED_MODULE_3__["JssProvider"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
-    store: Object(_redux_store__WEBPACK_IMPORTED_MODULE_10__["default"])()
+    store: Object(_redux_store__WEBPACK_IMPORTED_MODULE_9__["default"])()
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["StaticRouter"], {
     location: req.url,
     context: context
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_6___default.a.Provider, {
-    value: {
-      insertCss
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_9__["default"], null)))))));
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_8__["default"], null))))));
   const cssString = sheets.toString();
-  res.send("\n    <!DOCTYPE html>\n    <html lang='en'>\n    <head>\n      <meta charset='UTF-8'>\n      <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n      <meta http-equiv='X-UA-Compatible' content='ie=edge'>\n      <title>Movie searcher</title>\n      <link rel='shortcut icon' type='image/png' href='https://cdn.auth0.com/blog/react-js/react.png'/>\n      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />\n      <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />\n      <style id='ssr-styles'>".concat([...css].join(''), "</style>\n      <style id=\"ssr-material-ui-styles\">").concat(cssString, "</style>\n    </head>\n    <body>\n      <div id='root'>").concat(html, "</div>\n      <script type='text/javascript' src='bundle.js' async></script>\n      ").concat(dev ? '<script src="/reload/reload.js" async></script>' : '', "\n    </body>\n    </html>\n  "));
+  res.send("\n    <!DOCTYPE html>\n    <html lang='en'>\n    <head>\n      <meta charset='UTF-8'>\n      <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n      <meta http-equiv='X-UA-Compatible' content='ie=edge'>\n      <title>Movie searcher</title>\n      <link rel='shortcut icon' type='image/png' href='https://cdn.auth0.com/blog/react-js/react.png'/>\n      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />\n      <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />\n      <link rel='stylesheet' href='/styles/main.css' />\n      <style id=\"ssr-material-ui-styles\">".concat(cssString, "</style>\n    </head>\n    <body>\n      <div id='root'>").concat(html, "</div>\n      <script type='text/javascript' src='bundle.js' async></script>\n      ").concat(dev ? '<script src="/reload/reload.js" async></script>' : '', "\n    </body>\n    </html>\n  "));
 });
 app.listen(port, () => console.log("Web server listening on port http://localhost:".concat(port)));
 
@@ -1834,28 +1376,6 @@ module.exports = require("core-js");
 /***/ (function(module, exports) {
 
 module.exports = require("express");
-
-/***/ }),
-
-/***/ "isomorphic-style-loader/StyleContext":
-/*!*******************************************************!*\
-  !*** external "isomorphic-style-loader/StyleContext" ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-style-loader/StyleContext");
-
-/***/ }),
-
-/***/ "isomorphic-style-loader/useStyles":
-/*!****************************************************!*\
-  !*** external "isomorphic-style-loader/useStyles" ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-style-loader/useStyles");
 
 /***/ }),
 
