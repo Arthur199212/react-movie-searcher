@@ -35,13 +35,14 @@ if (dev) {
 
 app.use((req, res) => {
   const context = {}
+  const store = configureStore()
 
   const sheets = new ServerStyleSheets()
 
   const html = renderToString(
     sheets.collect(
       <JssProvider>
-        <Provider store={configureStore()}>
+        <Provider store={store}>
           <StaticRouter location={req.url} context={context}>
               <App />
           </StaticRouter>
@@ -49,6 +50,8 @@ app.use((req, res) => {
       </JssProvider>
     )
   )
+
+  const preloadedState = store.getState()
 
   // context.url will contain the URL to redirect to if a <Redirect> was used
   if (context.url) {
@@ -80,6 +83,10 @@ app.use((req, res) => {
       <div id='root'>${html}</div>
       <script type='text/javascript' src='/bundle.js' async></script>
       ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
+
+      <script>
+        window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+      </script>
     </body>
     </html>
   `)

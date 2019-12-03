@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import configureStore from './redux/store'
 
 hydrate(
-  <Provider store={configureStore()}>
+  <Provider store={configureStore(window.PRELOADED_STATE)}>
     <Router>
         <App />
     </Router>
