@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server'
 import { JssProvider } from 'react-jss'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 import reload from 'reload'
 
@@ -36,19 +37,25 @@ if (dev) {
 app.use((req, res) => {
   const context = {}
 
+  const { store, persistor } = configureStore()
+
   const sheets = new ServerStyleSheets()
 
   const html = renderToString(
     sheets.collect(
       <JssProvider>
-        <Provider store={configureStore()}>
-          <StaticRouter location={req.url} context={context}>
-              <App />
-          </StaticRouter>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <StaticRouter location={req.url} context={context}>
+                <App />
+            </StaticRouter>
+          </PersistGate>
         </Provider>
       </JssProvider>
     )
   )
+
+  const preloadedState = store.getState()
 
   // context.url will contain the URL to redirect to if a <Redirect> was used
   if (context.url) {
@@ -80,6 +87,10 @@ app.use((req, res) => {
       <div id='root'>${html}</div>
       <script type='text/javascript' src='/bundle.js' async></script>
       ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
+
+      <script>
+        // window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+      </script>
     </body>
     </html>
   `)
