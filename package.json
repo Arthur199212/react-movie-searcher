@@ -6,6 +6,7 @@
   "homepage": "http://arthur199212.github.io/react-movie-searcher",
   "scripts": {
     "start": "concurrently \"webpack --mode development --watch\" \"nodemon dist/main\"",
+    "start-server": "nodemon dist/main",
     "dev": "webpack --mode development --progress",
     "build": "webpack --mode production --progress"
   },
@@ -23,6 +24,7 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

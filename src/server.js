@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server'
 import { JssProvider } from 'react-jss'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 import reload from 'reload'
 
@@ -35,7 +36,8 @@ if (dev) {
 
 app.use((req, res) => {
   const context = {}
-  const store = configureStore()
+
+  const { store, persistor } = configureStore()
 
   const sheets = new ServerStyleSheets()
 
@@ -43,9 +45,11 @@ app.use((req, res) => {
     sheets.collect(
       <JssProvider>
         <Provider store={store}>
-          <StaticRouter location={req.url} context={context}>
-              <App />
-          </StaticRouter>
+          <PersistGate loading={null} persistor={persistor}>
+            <StaticRouter location={req.url} context={context}>
+                <App />
+            </StaticRouter>
+          </PersistGate>
         </Provider>
       </JssProvider>
     )
@@ -85,7 +89,7 @@ app.use((req, res) => {
       ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
 
       <script>
-        window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        // window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
       </script>
     </body>
     </html>
