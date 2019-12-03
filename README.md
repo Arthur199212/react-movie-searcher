@@ -10,7 +10,7 @@ In the project directory, you can run:
 ### `npm i`
 For installing all new dependencies from the project
 
-### `npm run watch`
+### `npm start`
 It will run server on [http://localhost:4000](http://localhost:4000) (click to check in the browser).
 
 The page will reload if you make edits.<br />
