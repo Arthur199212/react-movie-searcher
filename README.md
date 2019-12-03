@@ -23,3 +23,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified.
 After this app is ready to be deployed.
+
+### Screenshots
+
+![main_page_1](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/01.PNG)
+
+![main_page_2](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/02.PNG)
+
+![detailed_page_3](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/03.PNG)
