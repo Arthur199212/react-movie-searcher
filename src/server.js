@@ -50,6 +50,16 @@ app.use((req, res) => {
     )
   )
 
+  // context.url will contain the URL to redirect to if a <Redirect> was used
+  if (context.url) {
+    res.writeHead(302, {
+      Location: context.url
+    })
+
+    res.end()
+    return
+  }
+
   const cssString = sheets.toString()
 
   res.send(`
@@ -68,7 +78,7 @@ app.use((req, res) => {
     </head>
     <body>
       <div id='root'>${html}</div>
-      <script type='text/javascript' src='bundle.js' async></script>
+      <script type='text/javascript' src='/bundle.js' async></script>
       ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
     </body>
     </html>

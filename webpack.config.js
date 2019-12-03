@@ -17,7 +17,6 @@ const serverConfig = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-
           {
             loader: 'css-loader',
             options: {

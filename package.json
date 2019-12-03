@@ -5,8 +5,7 @@
   "main": "dist/main.js",
   "homepage": "http://arthur199212.github.io/react-movie-searcher",
   "scripts": {
-    "start": "node dist/main.js",
-    "watch": "concurrently \"webpack --mode development --watch\" \"nodemon dist/main\"",
+    "start": "concurrently \"webpack --mode development --watch\" \"nodemon dist/main\"",
     "dev": "webpack --mode development --progress",
     "build": "webpack --mode production --progress"
   },
