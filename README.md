@@ -29,3 +29,11 @@ After this app is ready to be deployed.
 ### `npm run deploy`
 
 Publishes app to the gh-pages so it will be available by the [link](https://arthur199212.github.io/react-movie-searcher/)
+
+### Screenshots
+
+![main_page_1](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/01.PNG)
+
+![main_page_2](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/02.PNG)
+
+![detailed_page_3](https://raw.githubusercontent.com/Arthur199212/react-movie-searcher/gh-pages/03.PNG)
