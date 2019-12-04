@@ -1,15 +1,19 @@
+import { call, put, all, takeLatest, select } from 'redux-saga/effects'
+
 import {
   ADD_MOVIES,
   SET_SEARCH_BY,
   SET_SORT_BY,
   SET_QUERY,
-  RISE_LIMIT,
+  LOAD_MORE,
   SET_VALUE,
   DELETE_VALUE,
-  SPINER_TURN_ON,
-  SPINER_TURN_OFF,
   ADD_MOVIE_DATA,
-  SET_DEFAULT_MOVIE_DATA
+  SET_DEFAULT_MOVIE_DATA,
+  FETCH_MOVIES,
+  FETCH_MOVIES_FAILED,
+  FETCH_MOVIE_DETAILS,
+  FETCH_MOVIE_DETAILS_FAILED
 } from '../constants'
 import { GET_URL, GET_DETAILED_URL } from '../../api'
 
@@ -18,40 +22,8 @@ const addMoviesData = payload => ({
   payload
 })
 
-const setSearchBy = payload => ({
-  type: SET_SEARCH_BY,
-  payload
-})
-
-const setSortBy = payload => ({
-  type: SET_SORT_BY,
-  payload
-})
-
-const setQuery = payload => ({
-  type: SET_QUERY,
-  payload
-})
-
-const riseLimit = () => ({
-  type: RISE_LIMIT
-})
-
 const deleteValue = () => ({
   type: DELETE_VALUE
-})
-
-const spinerTurnOn = () => ({
-  type: SPINER_TURN_ON
-})
-
-const spinerTurnOff = () => ({
-  type: SPINER_TURN_OFF
-})
-
-export const setValue = payload => ({
-  type: SET_VALUE,
-  payload
 })
 
 const addMovieData = payload => ({
@@ -59,60 +31,106 @@ const addMovieData = payload => ({
   payload
 })
 
-const setDefaultMovieData = () => ({
-  type: SET_DEFAULT_MOVIE_DATA,
+export const setSearchBy = payload => ({
+  type: SET_SEARCH_BY,
+  payload
 })
 
-export const fetchData = subreddit => (dispatch, getState) => {
-  const { searchData } = getState()
+export const setSortBy = payload => ({
+  type: SET_SORT_BY,
+  payload
+})
 
-  dispatch(spinerTurnOn())
+export const setQuery = payload => ({
+  type: SET_QUERY,
+  payload
+})
 
-  fetch(GET_URL(searchData))
-    .then(res => res.json())
-    .then(data => {
-      dispatch(addMoviesData(data))
-      dispatch(spinerTurnOff())
-    })
-    .catch(err => {
-      dispatch(spinerTurnOff())
-      console.log('Failed to get data:', err.message)
-    })
+export const loadMore = () => ({
+  type: LOAD_MORE
+})
+
+export const setValue = payload => ({
+  type: SET_VALUE,
+  payload
+})
+
+export const setDefaultMovieData = () => ({
+  type: SET_DEFAULT_MOVIE_DATA
+})
+
+export const fetchMovies = () => ({
+  type: FETCH_MOVIES
+})
+
+export const fetchMoviesFailed = () => ({
+  type: FETCH_MOVIES_FAILED
+})
+
+export const fetchMovieDetails = payload => ({
+  type: FETCH_MOVIE_DETAILS,
+  payload
+})
+
+export const fetchMovieDetailsFailed = () => ({
+  type: FETCH_MOVIE_DETAILS_FAILED
+})
+
+// * Saga *
+export function* fetchDataAsync() {
+  const searchData = yield select(state => state.searchData)
+  yield put((deleteValue()))
+
+  try {
+  const res = yield call(fetch, GET_URL(searchData))
+  const data = yield res.json()
+
+  yield put(addMoviesData(data))
+  } catch (err) {
+    yield put(fetchMoviesFailed())
+    console.log('Failed to get data:', err.message)
+  }
+}
+export function* watchFetchData() {
+  yield takeLatest(FETCH_MOVIES, fetchDataAsync)
 }
 
-export const fetchDetaledData = subreddit => dispatch => {
-  dispatch(setDefaultMovieData())
-  dispatch(spinerTurnOn())
-
-  fetch(GET_DETAILED_URL(subreddit))
-    .then(res => res.json())
-    .then(data => {
-      dispatch(addMovieData(data))
-      dispatch(spinerTurnOff())
-    })
-    .catch(err => {
-      dispatch(spinerTurnOff())
-      console.log('Failed to get detaild movie data:', err.message)
-    })
+export function* fetchDetaledDataAsync({ payload }) {
+  try {
+    const res = yield call(fetch, GET_DETAILED_URL(payload))
+    const data = yield res.json()
+    
+    yield put(addMovieData(data))
+  } catch (err) {
+    yield put(fetchMovieDetailsFailed())
+    console.log('Failed to get detaild movie data:', err.message)
+  }
+}
+export function* watchFetchDetaledDataAsync() {
+  yield takeLatest(FETCH_MOVIE_DETAILS, fetchDetaledDataAsync)
 }
 
-export const changeSearchBy = subreddit => dispatch => {
-  dispatch(setSearchBy(subreddit))
-  dispatch(fetchData())
+export function* watchChangeSearchBy() {
+  yield takeLatest(SET_SEARCH_BY, fetchDataAsync)
+}
+export function* watchSetQuery() {
+  yield takeLatest(SET_QUERY, fetchDataAsync)
+}
+export function* whaitChangeSortBy() {
+  yield takeLatest(SET_SORT_BY, fetchDataAsync)
+}
+export function* whatchLoadMore() {
+  yield takeLatest(LOAD_MORE, fetchDataAsync)
 }
 
-export const changeSortBy = subreddit => dispatch => {
-  dispatch(setSortBy(subreddit))
-  dispatch(fetchData())
-}
-
-export const makeQuery = subreddit => dispatch => {
-  dispatch(setQuery(subreddit))
-  dispatch(fetchData())
-  dispatch(deleteValue())
-}
-
-export const loadMore = subreddit => dispatch => {
-  dispatch(riseLimit())
-  dispatch(fetchData())
+// * Collect all sagas *
+export function* sagas() {
+  yield all([
+    watchFetchData(),
+    watchChangeSearchBy(),
+    watchSetQuery(),
+    whaitChangeSortBy(),
+    whatchLoadMore(),
+    watchFetchDetaledDataAsync()
+  ])
 }

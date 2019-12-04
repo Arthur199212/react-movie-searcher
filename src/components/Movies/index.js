@@ -5,7 +5,7 @@ import { Container, Grid, Button, CircularProgress, Typography } from '@material
 import Movie from '../Movie'
 import './movies.scss'
 
-const Movies = ({ movies, handleLoadMore, showSpiner, handleSerachForQuery }) => {
+const Movies = ({ movies = [], loading, handleLoadMore, handleSerachForQuery, setDefaultMovieData }) => {
   const { query } = useParams()
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Movies = ({ movies, handleLoadMore, showSpiner, handleSerachForQuery }) =>
   
   return (
     <Container className='movies_container' maxWidth='lg'>
-      {!movies.length && !showSpiner ? 
+      {!movies.length && !loading ? 
         (
           <Typography variant="h6">
             No movies found
@@ -30,7 +30,7 @@ const Movies = ({ movies, handleLoadMore, showSpiner, handleSerachForQuery }) =>
               </Grid>
             ))}
           </Grid>
-          {showSpiner && (
+          {loading && (
             <div className='spiner_container'>
               <CircularProgress />
             </div>

@@ -3,31 +3,35 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Typography, Container, Grid, CircularProgress } from '@material-ui/core'
 
-import { fetchDetaledData } from '../../redux/actions'
+import { fetchMovieDetails, setDefaultMovieData } from '../../redux/actions'
 import './movieDetails.scss'
 
-const MovieDetails = ({ showSpiner }) => {
+const MovieDetails = () => {
   const movieData = useSelector(({ movieData }) => movieData)
   const dispatch = useDispatch()
   const { movieId } = useParams()
 
   useEffect(() => {
-    dispatch(fetchDetaledData(movieId))
+    dispatch(fetchMovieDetails(movieId))
+
+    return () => {
+      dispatch(setDefaultMovieData())
+    }
   }, [])
 
-  const { poster_path = '', title = '', release_date, overview } = movieData
+  const { movie: { poster_path, title, release_date, overview, id }, loading } = movieData
 
   return (
     <Container className='movie-detail_container' maxWidth='lg'>
       <Grid container spacing={3}>
-        {!movieData.id && !showSpiner ?
+        { !id && !loading ?
           (
             <Typography variant="h6">
               Nothing found
             </Typography>
           ) : (
             <>
-              {showSpiner && (
+              {loading && (
                 <Grid item xs={12} className='spiner_container'>
                   <CircularProgress />
                 </Grid>

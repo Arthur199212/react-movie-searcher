@@ -6,11 +6,11 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 import {
   setValue,
-  fetchData,
-  changeSearchBy,
-  changeSortBy,
-  makeQuery,
-  loadMore
+  loadMore,
+  fetchMovies,
+  setSearchBy,
+  setQuery,
+  setSortBy
 } from '../redux/actions'
 
 import Header from './Header'
@@ -26,22 +26,21 @@ const App = () => {
   const data = useSelector(({ moviesData }) => moviesData)
   const searchData = useSelector(({ searchData }) => searchData)
   const value = useSelector(({ inputValue }) => inputValue)
-  const showSpiner = useSelector(({ showSpiner }) => showSpiner)
 
   const dispatch = useDispatch()
 
   const history = useHistory()
 
   useEffect(() => {
-    dispatch(fetchData(searchData))
+    dispatch(fetchMovies())
   }, [])
 
   const handleChangeSearchBy = tag => {
-    dispatch(changeSearchBy(tag))
+    dispatch(setSearchBy(tag))
   }
 
   const handleChangeSortBy = tag => {
-    dispatch(changeSortBy(tag))
+    dispatch(setSortBy(tag))
   }
 
   const handleChangeValue = ({ target: { value } }) => {
@@ -56,8 +55,7 @@ const App = () => {
 
   const handleSerachForQuery = value => {
     if (value) {
-      dispatch(setValue(value.trim()))
-      dispatch(makeQuery(value.trim()))
+      dispatch(setQuery(value.trim()))
     }
   }
 
@@ -86,7 +84,7 @@ const App = () => {
                 onSubmit={handleSubmitQuery}
               />
               <Sort
-                moviesFound={data.total}
+                moviesFound={data.movies.total}
                 sortBy={searchData.sortBy}
                 onClick={handleChangeSortBy}
               />
@@ -94,9 +92,9 @@ const App = () => {
                 {[`/search/:query`, '/search'].map(route => (
                   <Route key={route} path={route}>
                     <Movies
-                      movies={data.data}
+                      movies={data.movies.data}
+                      loading={data.loading}
                       handleLoadMore={handleLoadMore}
-                      showSpiner={showSpiner}
                       handleSerachForQuery={handleSerachForQuery}
                     />
                   </Route>
@@ -104,7 +102,7 @@ const App = () => {
               </Switch>
             </Route>
             <Route path={`/film/:movieId`}>
-              <MovieDetails showSpiner={showSpiner} />
+              <MovieDetails />
             </Route>
             <Route path=''>
               <NotFound />

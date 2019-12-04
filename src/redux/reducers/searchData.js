@@ -1,4 +1,4 @@
-import { SET_SEARCH_BY, SET_SORT_BY, SET_QUERY, RISE_LIMIT } from '../constants'
+import { SET_SEARCH_BY, SET_SORT_BY, SET_QUERY, LOAD_MORE } from '../constants'
 
 export const preloadedState = {
   query: '',
@@ -26,7 +26,7 @@ const searchData = (state = preloadedState, { type, payload }) => {
         query: payload,
         limit: preloadedState.limit
       }
-    case RISE_LIMIT:
+    case LOAD_MORE:
       return {
         ...state,
         limit: state.limit + preloadedState.limit
