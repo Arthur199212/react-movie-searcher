@@ -1,7 +1,7 @@
 # Movie searcher | SSR branch
 
 1. [Link to hosted App](https://arthur199212.github.io/react-movie-searcher/)
-2. Used technologies: JS (ES6+), React (Hooks), Redux (Hooks), server-side rendering (with custom styles and Material-UI), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
+2. Used technologies: JS (ES6+), React (Hooks), Redux (Hooks), redux-saga, server-side rendering (with custom styles and Material-UI), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
 
 ## Available Scripts
 
