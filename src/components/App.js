@@ -31,13 +31,16 @@ const App = () => {
 
   const history = useHistory()
 
-  // * It runs only for the server side for grabbing async data to ssr to send to client.
-  // * Hook useFetch doesn't work on server side.
+  // * It could be used for grabbing async data and render html with all data on the server before sending to a client.
   // *
-  // * Now it's better to use NextJS for that purpose. Or just to wait for Suspense for SSR.
-  if (typeof window === 'undefined') {
-    dispatch(fetchMovies())
-  }
+  // * The problem is with hook `useFetch`. It doesn't work on server side.
+  // *
+  // * Now it's better to use NextJS for that purpose. Or just to wait for React Suspense for SSR.
+  // *
+  // * For now I just comment that part of code. But if you use it, you'll see that server returnes fully loaded data.
+  // if (typeof window === 'undefined') {
+  //   dispatch(fetchMovies())
+  // }
 
   useEffect(() => {
     dispatch(fetchMovies())
