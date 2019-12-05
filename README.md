@@ -4,10 +4,6 @@
 2. Used technologies: JS (ES6+), React (Hooks, Lazy, Suspense), Redux (Hooks), redux-thunk, redux-persist, SSR (server-side rendering with `redux-saga`, custom styles, Material-UI styles), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
 
 ### Information: to check work of SSR with simple Express server please visit `ssr branch`.
-#### Done for SSR:
-1. Async actions, redux provides initial state from server.
-2. Server app handles query params to compute initial state.
-3. Route masking (for example like `localhost/search/Search%20Query`).
 
 ## Available Scripts
 
