@@ -5,7 +5,7 @@ import { Container, Grid, Button, CircularProgress, Typography } from '@material
 import Movie from '../Movie'
 import './movies.scss'
 
-const Movies = ({ movies = [], loading, handleLoadMore, handleSerachForQuery, setDefaultMovieData }) => {
+const Movies = ({ movies = [], loading, handleLoadMore, handleSerachForQuery }) => {
   const { query } = useParams()
 
   useEffect(() => {

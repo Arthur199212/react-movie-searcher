@@ -5,7 +5,7 @@ const initialState = {
   loading: false
 }
 
-const moviesDataSaga = (state = initialState, { type, payload }) => {
+const moviesData = (state = initialState, { type, payload }) => {
   switch (type) {
     case FETCH_MOVIES:
       return {
@@ -27,4 +27,4 @@ const moviesDataSaga = (state = initialState, { type, payload }) => {
   }
 }
 
-export default moviesDataSaga
+export default moviesData

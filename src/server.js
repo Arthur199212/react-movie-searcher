@@ -33,64 +33,72 @@ if (dev) {
     })
 }
 
+const renderApp = (store, req, context, sheets) => (
+  sheets.collect(
+    <JssProvider>
+      <Provider store={store}>
+          <StaticRouter location={req.url} context={context}>
+              <App />
+          </StaticRouter>
+      </Provider>
+    </JssProvider>
+  )
+)
+
+const store = configureStore()
+
 app.use((req, res) => {
   const context = {}
 
-  const store = configureStore()
-
   const sheets = new ServerStyleSheets()
 
-  const html = renderToString(
-    sheets.collect(
-      <JssProvider>
-        <Provider store={store}>
-            <StaticRouter location={req.url} context={context}>
-                <App />
-            </StaticRouter>
-        </Provider>
-      </JssProvider>
-    )
-  )
+  store.runSaga().toPromise().then(() => {
+    const preloadedState = store.getState()
 
-  const preloadedState = store.getState()
+    const html = renderToString(renderApp(store, req, context, sheets))
+    
+    // context.url will contain the URL to redirect to if a <Redirect> was used
+    if (context.url) {
+      res.writeHead(302, {
+        Location: context.url
+      })
+      
+      res.end()
+      return
+    }
 
-  // context.url will contain the URL to redirect to if a <Redirect> was used
-  if (context.url) {
-    res.writeHead(302, {
-      Location: context.url
-    })
+    const cssString = sheets.toString()
+  
+    res.send(`
+      <!DOCTYPE html>
+      <html lang='en'>
+      <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+        <title>Movie searcher</title>
+        <link rel='shortcut icon' type='image/png' href='https://cdn.auth0.com/blog/react-js/react.png'/>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
+        <link rel='stylesheet' href='/styles/main.css' />
+        <style id="ssr-material-ui-styles">${cssString}</style>
+      </head>
+      <body>
+        <div id='root'>${html}</div>
+        <script type='text/javascript' src='/bundle.js' async></script>
+        ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
+        
+        <script>
+          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        </script>
+        </body>
+        </html>
+        `)
+  })
 
-    res.end()
-    return
-  }
+  renderToString(renderApp(store, req, context, sheets))
 
-  const cssString = sheets.toString()
-
-  res.send(`
-    <!DOCTYPE html>
-    <html lang='en'>
-    <head>
-      <meta charset='UTF-8'>
-      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-      <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-      <title>Movie searcher</title>
-      <link rel='shortcut icon' type='image/png' href='https://cdn.auth0.com/blog/react-js/react.png'/>
-      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
-      <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
-      <link rel='stylesheet' href='/styles/main.css' />
-      <style id="ssr-material-ui-styles">${cssString}</style>
-    </head>
-    <body>
-      <div id='root'>${html}</div>
-      <script type='text/javascript' src='/bundle.js' async></script>
-      ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
-
-      <script>
-        window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-      </script>
-    </body>
-    </html>
-  `)
+  store.close()
 })
 
 app.listen(port, () =>

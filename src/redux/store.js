@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import createSagaMiddleware, { END } from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import {

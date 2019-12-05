@@ -1,4 +1,5 @@
 import { call, put, all, takeLatest, select } from 'redux-saga/effects'
+const fetch = require('node-fetch');
 
 import {
   ADD_MOVIES,

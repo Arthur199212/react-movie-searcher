@@ -17,6 +17,7 @@
     "@material-ui/icons": "^4.5.1",
     "core-js": "^3.4.1",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-jss": "^10.0.0",
