@@ -34,7 +34,7 @@ const App = () => {
   // * It runs only for the server side for grabbing async data to ssr to send to client.
   // * Hook useFetch doesn't work on server side.
   // *
-  // * As I see it's better to use NextJS for that purpose.
+  // * Now it's better to use NextJS for that purpose. Or just to wait for Suspense for SSR.
   if (typeof window === 'undefined') {
     dispatch(fetchMovies())
   }
