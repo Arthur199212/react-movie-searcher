@@ -3,11 +3,6 @@
 1. [Link to hosted App](https://arthur199212.github.io/react-movie-searcher/)
 2. Used technologies: JS (ES6+), React (Hooks), Redux (Hooks), redux-saga, server-side rendering (with custom styles and Material-UI), [public API](https://reactjs-cdp.herokuapp.com/api-docs).
 
-#### What is done:
-1. Async actions, redux provides initial state from server.
-2. Server app handles query params to compute initial state.
-3. Route masking (for example like `localhost/search/Search%20Query`).
-
 ## Available Scripts
 
 In the project directory, you can run:
