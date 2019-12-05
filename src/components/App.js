@@ -38,6 +38,7 @@ const App = () => {
   // * Now it's better to use NextJS for that purpose. Or just to wait for React Suspense for SSR.
   // *
   // * For now I just comment that part of code. But if you use it, you'll see that server returnes fully loaded data.
+  // * Moreover it could be used only for searching engines of browsers (for better SEO) and just disable that for clients.
   // if (typeof window === 'undefined') {
   //   dispatch(fetchMovies())
   // }

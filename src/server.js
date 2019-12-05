@@ -89,6 +89,7 @@ app.use((req, res) => {
         ${dev ? '<script src="/reload/reload.js" async></script>' : ''}
         
         <script>
+          // Here it's better to use serialize-javascript because of security purposes.
           window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
         </body>
